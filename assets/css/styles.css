@@ -56,7 +56,9 @@ nav a:hover {
     margin: 1rem 0 0.5rem 0;
 }
 
-.badge {
+/* Badge */
+.badge,
+.steps-badge {
     background-color: #FAFAFA;
     border: 1px solid #ECECEC;
     border-radius: 35px;
@@ -70,7 +72,8 @@ nav a:hover {
     padding: 0.5rem 0rem;
 }
 
-.badge-circle {
+.badge-circle,
+.green-icon {
     background: #6AC37F;
     width: 8px;
     height: 8px;
@@ -80,10 +83,12 @@ nav a:hover {
     margin: 0 1rem;
 }
 
-.badge-title {
+.badge-title,
+.steps-badge-text {
     margin: 0;
     color: #343F4C;
     line-height: 21.79px;
+    font-size: 12px;
 }
 
 .badge-title-bold {
@@ -129,13 +134,17 @@ nav a:hover {
 }
 
 #arrow,
-#arrow_2 {
+#arrow_2{
     margin-left: 0.2rem;
 }
 
 #arrow-path,
-#arrow-path-bt {
-    transition: all 1s;
+#arrow-path-bt,
+#arrow-path-pr-free,
+#arrow-path-pr-basic,
+#arrow-path-pr-growth,
+#arrow-path-stremlining {
+    transition: all 0.5s;
 }
 
 .hero-img {
@@ -143,7 +152,7 @@ nav a:hover {
     margin: 2rem 0;
 }
 
-.vertical-text-slider {
+/* .vertical-text-slider {
     height: 32px;
     overflow-y: hidden;
     margin-top: 1.5rem;
@@ -178,7 +187,7 @@ nav a:hover {
     }
 
     5% {
-        /* For stopping effect */
+    
         margin-top: -60px;
     }
 
@@ -187,12 +196,80 @@ nav a:hover {
     }
 
     38% {
-        /* For stopping effect */
+       
         margin-top: -30px;
     }
 
     66% {
         margin-top: -30px;
+    }
+
+    71% {
+      
+        margin-top: 0px;
+    }
+
+    100% {
+        margin-top: 0px;
+    }
+} */
+
+.vertical-text-slider {
+    height: 38px;
+    /* Increased the height to accommodate larger font size */
+    overflow-y: hidden;
+    margin-top: 0.6rem;
+}
+
+.vertical-text-slider h2 {
+    font-size: 30px;
+    /* Changed the font size to 30px */
+    line-height: 35px;
+    /* Adjusted line height to 35px */
+    font-weight: 600;
+    font-family: Avenir;
+    text-align: center;
+}
+
+.vt-slider-1 {
+    color: #4C42B8;
+    animation: slide 5s linear infinite;
+}
+
+.vt-slider-2 {
+    color: #6AC37F;
+}
+
+.vt-slider-3 {
+    color: #F25821;
+}
+
+@keyframes slide {
+    0% {
+        margin-top: -105px;
+        /* Adjusted to account for larger font size */
+    }
+
+    5% {
+        /* For stopping effect */
+        margin-top: -70px;
+        /* Adjusted */
+    }
+
+    33% {
+        margin-top: -70px;
+        /* Adjusted */
+    }
+
+    38% {
+        /* For stopping effect */
+        margin-top: -35px;
+        /* Adjusted */
+    }
+
+    66% {
+        margin-top: -35px;
+        /* Adjusted */
     }
 
     71% {
@@ -203,4 +280,359 @@ nav a:hover {
     100% {
         margin-top: 0px;
     }
+}
+
+
+/* Pricing */
+.pricing-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pr-hero-div {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pr-hero-title {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: Avenir;
+    line-height: 54.64px;
+    text-align: center;
+
+}
+
+.pr-hero-subtitle {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21.79px;
+    text-align: center;
+    color: #212C38;
+    margin-top: 10px;
+}
+
+.pricing-sec-div {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing-toggle-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.pricing-save {
+    background-color: #EEF0F2;
+    width: 77px;
+    height: 25px;
+    border-radius: 27px;
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.20000000298023224px;
+    text-align: center;
+    color: #C8C8C8;
+    /* transition: all 0.5s; */
+}
+
+.pricing-save-active {
+    background-color: #FEC753;
+    color: #000000;
+}
+
+.pricing-toggle-sec p {
+    color: #343F4C;
+    /* transition: all 0.5s; */
+
+}
+
+.pricing-lable-active {
+    font-weight: bold;
+}
+
+.toggle-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.toggle-switch {
+    background-color: #6AC37F;
+    width: 42px;
+    height: 23px;
+    border-radius: 16px;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.toggle-switch::before {
+    content: "";
+    font-weight: 900;
+    background-color: white;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddd;
+    transition: 0.3s;
+}
+
+.toggle-checkbox:checked+.toggle-switch {
+    background-color: #4C42B8;
+}
+
+.toggle-checkbox:checked+.toggle-switch::before {
+    content: "";
+    left: 22px;
+    color: #4C42B8;
+}
+
+.cards-container {
+    margin-top: 4rem;
+    /* padding-left: 168px;
+    padding-right: 168px; */
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #EDEDED;
+    background-color: #fbfbfc4c;
+    transition: 0.3s;
+    border-radius: 20px;
+    padding: 10px 16px 30px 28px;
+
+    width: 354px;
+    height: 554px;
+    /* top: 436px;
+    left: 170px; */
+    /* gap: 0px; */
+    border-radius: 30px;
+    /* opacity: 0px; */
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+
+.steps-badge {
+    width: 124px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #FAFAFAB2;
+    border: 1px solid #ECECEC;
+    border-radius: 2rem;
+}
+
+.steps-badge-text {
+    font-family: 'Avenir', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22.2px;
+    text-align: left;
+}
+
+.green-icon {
+    background: #6AC37F;
+    width: 8px;
+    height: 8px;
+}
+
+
+.pr-card-header {
+    /* padding: 2rem 1rem; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pr-badge,
+.steps-badge {
+    height: 2.3rem;
+    padding: 0 0.1rem;
+}
+
+.pr-card-top-img {
+    margin-top: 10px;
+    width: 8.7rem;
+}
+
+.pr-basic-round-img {
+    width: 7.7rem;
+    margin-bottom: 0.79rem;
+}
+
+.price-div {
+    margin-top: -15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rupee-sign {
+    height: 23px;
+}
+
+.price {
+    font-family: Open Sans;
+    font-size: 35px;
+    font-weight: 700;
+    /* line-height: 64.75px; */
+    text-align: left;
+    color: #000000;
+}
+
+.pr-card-hr {
+    height: 1px;
+    /* border: 1px solid #E9E9E9; */
+    width: 96%;
+}
+
+.plan-features {
+    margin: 1.5rem 0;
+}
+
+.plan-feature {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.plan-feature-bullet {
+    width: 10px;
+    height: 10px;
+    background: #6AC37F;
+    display: inline-block;
+}
+
+.plan-feature-text {
+    margin-bottom: 0;
+    color: #212C38;
+    font-weight: 300;
+    font-size: 15px;
+
+}
+
+.plan-feature-bold {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: -0.20000000298023224px;
+    text-align: left;
+
+}
+
+.plan-getstart-btn-div {
+    position: absolute;
+    padding-right: 12px;
+    left: 5px;
+    /* top:490px; */
+    bottom: 40px;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    /* background: rebeccapurple; */
+}
+
+.plan-slt-btn {
+    width: 153px;
+    height: 50px;
+    margin-left: 4px;
+    font-size: 16px;
+    display: flex;
+    gap: 5px;
+    font-weight: 300;
+    padding: 0.7rem 0.5rem 0.7rem 1.6rem;
+}
+
+
+
+.onboarding-child {
+    position: absolute;
+    width: 157.87px;
+    height: 123.73px;
+    top: 460px;
+    left: 450px;
+    gap: 0px;
+    z-index: -1;
+    /* opacity: 0.6; */
+    /* transform: rotate(43.73deg); */
+    /* border: 85.33px solid transparent; */
+    /* border-image-source: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(103, 232, 249, 0.85) 0%, rgba(192, 132, 252, 0.85) 100%); */
+    /* border-image-slice: 1; */
+    filter: blur(90px);
+    border: 85.33px solid #E9E9E9;
+    border-image-source: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(103, 232, 249, 0.9) 0%, rgba(192, 132, 252, 0.9) 100%);
+
+
+}
+
+.card-gst-warn {
+    font-size: 12px;
+    font-weight: 300;
+    color: #7E7E7E;
+}
+
+.gst-warn-star {
+    color: red;
+}
+
+.streamlining-section {
+    background-image: url('/assets/img/loremIpsumBg.png');
+    background-repeat: 'no-repeat';
+    background-size: cover;
+    padding-top: 5.2rem;
+}
+
+.stremlining-title {
+    font-family: Avenir;
+}
+
+.try-free-btn-stremlinig {
+    padding: 0.8rem 0.5rem 0.8rem 1.5rem;
+    width: 11rem;
+    display: flex;
+    gap: 7px;
+    /* margin-left: 0.2rem; */
+}
+
+.submit-btn{
+    padding: 10px 1.5rem;
+}
+
+
+.social-icons {
+    opacity: 0.15;
+    transition: opacity 0.3s ease-in-out; 
+    cursor: pointer;
+}
+  
+.social-icons:hover {
+    opacity: 1;
 }
