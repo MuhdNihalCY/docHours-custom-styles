@@ -502,7 +502,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: center;
-    row-gap: 1rem   ;
+    row-gap: 1rem;
     /* padding-left: 168px;
     padding-right: 168px; */
     /* display: flex;
@@ -771,6 +771,35 @@ nav a:hover {
     }
 }
 
+@media only screen and (min-width: 1280px) {
+    .pr-cards-container {
+        grid-template-columns: auto auto auto;
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* padding-left: 3rem; */
+        /* padding-right: 3rem; */
+        justify-content: center;
+    }
+    .card {
+        /* width: 250px; */
+        max-width: 354px;
+        width: 100%;
+        /* width: 100%; */
+        min-height: 554px;
+        height: max-content;
+    }
+
+    .pr-blur-round-bg {
+        top: 129px;
+        left: 501px;
+    }
+}
+
+@media only screen and (max-width: 1546px) {
+     .pr-blur-round-bg {
+        top: 129px;
+        left: 400px;
+    }
+}
 
 @media only screen and (max-width: 1280px) {
     .pr-cards-container {
@@ -784,6 +813,7 @@ nav a:hover {
     .card {
         /* width: 250px; */
         max-width: 354px;
+        width: 100%;
         /* width: 100%; */
         min-height: 554px;
         height: max-content;
@@ -809,8 +839,8 @@ nav a:hover {
 
 @media only screen and (max-width: 1024px) {
     .pr-cards-container {
-        /* grid-template-columns: auto auto auto; */
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: auto auto auto;
+        /* grid-template-columns: 1fr 1fr 1fr; */
     }
 
     .pr-blur-round-bg {
@@ -844,11 +874,12 @@ nav a:hover {
         width: 100%;
         padding: 0 2rem;
         justify-content: center;
+        align-items: center;
     }
 
     .pr-blur-round-bg {
         top: 467px;
-        left: 128px;
+        left: 218px;
     }
 
     .card {
