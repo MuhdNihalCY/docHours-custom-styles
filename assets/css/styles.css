@@ -47,7 +47,8 @@
 
 .side-menu-nav-Links {
     position: absolute;
-    bottom: 60vh;
+    /* bottom: 60vh; */
+    margin-top: 4rem;
     width: 100%;
     /* Left: -14rem; */
     display: flex;
@@ -689,8 +690,8 @@ nav a:hover {
     /* border: 85.33px solid transparent; */
     /* border-image-source: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(103, 232, 249, 0.85) 0%, rgba(192, 132, 252, 0.85) 100%); */
     /* border-image-slice: 1; */
-    filter: blur(90px);
-    border: 85.33px solid #E9E9E9;
+    filter: blur(100px);
+    border: 85.33px solid #e9e9e9;
     border-image-source: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(103, 232, 249, 0.9) 0%, rgba(192, 132, 252, 0.9) 100%);
 
 
@@ -771,7 +772,7 @@ nav a:hover {
     }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1281px) {
     .pr-cards-container {
         grid-template-columns: auto auto auto;
         /* grid-template-columns: 1fr 1fr 1fr; */
@@ -779,6 +780,7 @@ nav a:hover {
         /* padding-right: 3rem; */
         justify-content: center;
     }
+
     .card {
         /* width: 250px; */
         max-width: 354px;
@@ -795,7 +797,7 @@ nav a:hover {
 }
 
 @media only screen and (max-width: 1546px) {
-     .pr-blur-round-bg {
+    .pr-blur-round-bg {
         top: 129px;
         left: 400px;
     }
@@ -821,7 +823,7 @@ nav a:hover {
 
     .pr-blur-round-bg {
         top: 129px;
-        left: 231px;
+        left: 370px;
     }
 
     .pr-basic-round-img {
@@ -845,7 +847,7 @@ nav a:hover {
 
     .pr-blur-round-bg {
         top: 129px;
-        left: 124px;
+        left: 200px;
     }
 
     .card {
@@ -899,5 +901,14 @@ nav a:hover {
 
     .pr-card-top-img {
         width: 8rem;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 408px) {
+    .pr-blur-round-bg {
+        top: 467px;
+        left: 40px;
+        width: 70px;
+        height: 70px;
     }
 }
