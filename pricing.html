@@ -19,12 +19,53 @@
 
 <body>
     <!-- header -->
+    <div id="side-menu-bar" class=" side-menu-bar  mx-auto">
+        <div class="side-menu-header px-4">
+            <a href="/" class="logo">
+                <img class="side-menu-header-logo" src="/assets/img/dochours-log.svg" alt="" srcset="">
+            </a>
+            <a href="javascript:void(0)" onclick="closeSideBar()" class="closebtn">
+                <img class="side-menu-header-logo" src="/assets/img/close-arrow.svg" alt="close-arrow" srcset="">
+            </a>
+            <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        </div>
+        <nav class="side-menu-links">
+            <div class="side-menu-nav-Links">
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="#">Contact</a>
+                <a class="login-register-btn" href="#">Login / Register</a>
+            </div>
+            <div class="side-menu-blur-bg"></div>
+            <div class="side-menu-footer">
+                <div class="flex justify-between gap-12 mt-8 text-gray-400 ">
+                    <a href="#" class="cursor-pointer">Terms & Conditions</a>
+                    <a href="#" class="cursor-pointer">Privacy Policy</a>
+                </div>
+                <div class="flex justify-between gap-4 mt-8">
+                    <img src="/assets/img/facebook.svg" class="social-icons" />
+                    <img src="/assets/img/instagram.svg" class="social-icons" />
+                    <img src="/assets/img/twitter.svg" class="social-icons" />
+                    <img src="/assets/img/linkedin.svg" class="social-icons" />
+                    <img src="/assets/img/youtube.svg" class="social-icons" />
+                </div>
+            </div>
+        </nav>
+        <!-- <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="#">Contact</a>
+        <a href="#">Login / Register</a> -->
+
+    </div>
     <header
-        class="container mx-auto flex px-6 md:px-0 sm:justify-normal md:justify-center md:max-w-full md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl">
-        <div class="header-container 2xl:w-4/5 ">
+        class="container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-full md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl">
+        <div class="header-container w-full 2xl:w-4/5 ">
             <div class="header-left-sec ">
-                <a href="/" class="logo"><img class="header-logo" src="/assets/img/dochours-logo.svg" alt=""
-                        srcset=""></a>
+                <a href="/" class="logo">
+                    <img class="header-logo" src="/assets/img/dochours-logo.svg" alt="" srcset="">
+                </a>
             </div>
             <nav class="header-right-sec hidden md:flex">
                 <a href="#">Home</a>
@@ -33,26 +74,29 @@
                 <a href="#">Contact</a>
                 <a class="login-register-btn" href="#">Login / Register</a>
             </nav>
+            <img src="/assets/img/hamburger-menu.svg" onclick="openSideBar()" class="menu-icon md:hidden" alt="menu"
+                srcset="">
         </div>
     </header>
 
-    <div class="container mx-auto pricing-body">
+    <div class="container mx-auto pricing-body px-2 md:px-0">
         <div class="pr-hero-div max-w-screen-sm sm:max-w-screen-md">
             <h2 class="pr-hero-title">Choose the plan that works for you</h2>
             <p class="pr-hero-subtitle">Lorem Ipsum is simply dummy text of the printing industry</p>
         </div>
-
         <div class="pricing-sec-div">
             <div class="pricing-toggle-sec">
-                <span id="pricing-save" class="pricing-save pricing-save-active">Save 15%</span>
-                <p id="annually-label" class="pricing-lable-active">Pay Annually</p>
+                <div class="annually-toggle-sec">
+                    <span id="pricing-save" class="pricing-save pricing-save-active">Save 15%</span>
+                    <p id="annually-label" class="pricing-lable-active">Pay Annually</p>
+                </div>
                 <label>
                     <input type="checkbox" id="pricing-toggle-btn" class="toggle-checkbox">
                     <div class="toggle-switch"></div>
                 </label>
                 <p id="monthly-label">Pay Monthly</p>
             </div>
-            <div class="cards-container flex gap-5  md:flex-row flex-col content-center max-w-full sm:w-sm md:w-[86%]">
+            <div class="cards-container gap-5 content-center max-w-full sm:w-sm md:w-full pr-cards-container">
                 <div class="card ">
                     <div class="pr-card-header">
                         <div class="badge pr-badge">
@@ -221,7 +265,7 @@
                     </div>
                 </div>
 
-                <div class="onboarding-child"></div>
+                <div class="onboarding-child pr-blur-round-bg "></div>
             </div>
             <p class="card-gst-warn"><span class="gst-warn-star">*</span> Excluding GST</p>
             <!-- <div class="card-gst-d"></div> -->
@@ -242,13 +286,14 @@
                 <span class="badge-circle"></span>
             </div>
             <!-- font-semibold -->
-            <h1 class="stremlining-title text-3xl font-semibold mt-2">Lorem Ipsum is simply dummy text </h1>
+            <h1 class="stremlining-title text-3xl font-semibold text-center mt-2">Lorem Ipsum is simply dummy text </h1>
             <div id="vertical-text-slider" class="vertical-text-slider">
                 <h2 class="vt-slider-1 ">Faster Bookings</h2>
                 <h2 class="vt-slider-2 ">Quicker Care</h2>
                 <h2 class="vt-slider-3 ">Deeper Insights</h2>
             </div>
-            <p class=" text-base mt-4 w-10/12 md:w-4/6 lg:w-3/6 font-extralight text-center">Lorem Ipsum is simply dummy text of the printing and
+            <p class=" text-base mt-4 w-10/12 md:w-4/6 lg:w-3/6 font-extralight text-center">Lorem Ipsum is simply dummy
+                text of the printing and
                 typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
             <!-- <div class="flex justify-center items-center mt-2 mb-4">
             <a class="custom-btn mt-6 mb-4 px-6 py-3" href="#">
@@ -274,21 +319,23 @@
 
 
     <!-- Footer Section -->
-    <div class="footer-section flex flex-col items-center justify-center px-4 py-12 relative">
+    <div class="footer-section flex flex-col items-center justify-center px-6 py-12 relative ">
         <h1 class="text-3xl font-semibold text-center md:w-4/12 w-full leading-10">Subscribe to our newsletter to get
             the latest updates</h1>
         <!-- <h1 class="text-3xl font-bold text-center mt-1">simply dummy text</h1> -->
         <div class="flex rounded-full border mt-12 relative">
             <input placeholder="Your email" type="email"
-                class="px-5 py-3 bg-gray-100 placeholder:italic text-sm font-light rounded-full w-96" />
+                class="px-5 py-3 bg-gray-100 placeholder:italic text-sm font-light rounded-full w-80 md:w-96 " />
             <button class="submit-btn absolute top-0 right-0 bg-[#4C42B8] text-white rounded-full">Subscribe</button>
         </div>
         <div
             class="flex items-center justify-center gap-4 mt-12 opacity-15 hover:opacity-100 transition ease-in-out delay-50">
-            <img src="/assets/img/footerLogo.svg" alt="Footer text" style="width: 40px;" />
-            <h1 class="text-4xl text-[#224D91]">doc<span class="font-bold">Hours</span></h1>
+            <!-- <img src="/assets/img/footerLogo.svg" alt="Footer text" style="width: 40px;" />
+            <h1 class="text-4xl text-[#224D91]">doc<span class="font-bold">Hours</span></h1> -->
+            <img class="header-logo" src="/assets/img/dochours-logo.svg" alt="" srcset="">
         </div>
-        <div class="footer-headers flex items-center gap-16 mt-12 justify-between">
+        <div class="footer-headers mt-6 justify-between md:flex  md:flex-row md:gap-16 footer-links">
+
             <a href="#" class="cursor-pointer">Features</a>
             <a href="#" class="cursor-pointer">Pricing</a>
             <a href="#" class="cursor-pointer">Resources</a>
@@ -309,10 +356,11 @@
         </div>
         <hr class="w-8/12 mt-8 hr" />
         <div class="flex justify-between gap-12 mt-6 text-gray-400">
-            <span class="font-thin text-sm"  >© 2024</span>
+            <span class="font-thin text-sm">© 2024</span>
             <a href="/index.html" class="flex items-center gap-1 cursor-pointer">
                 <img src="/assets/img/footerLogo.svg" />
-                <span class="font-thin hover:text-blue-800 " >docHours</span>
+                <span class="font-thin hover:text-blue-800 ">docHours</span>
+
             </a>
         </div>
     </div>

@@ -106,7 +106,7 @@ if (toggleBtn) {
             // console.log("montly");
             document.getElementById('basic-price').textContent = "1099";
             document.getElementById('growth-price').textContent = "3099";
-            
+
             montlyPayLabel.classList.add('pricing-lable-active');
             annuallyPayLabel.classList.remove('pricing-lable-active');
             offerLabel.classList.remove('pricing-save-active');
@@ -121,4 +121,16 @@ if (toggleBtn) {
             montlyPayLabel.classList.remove('pricing-lable-active');
         }
     })
+}
+
+
+// side bar
+function openSideBar() {
+    const sideBar = document.getElementById('side-menu-bar');
+    sideBar.classList.add('side-menu-bar-active');
+}
+
+function closeSideBar() {
+    const sideBar = document.getElementById('side-menu-bar');
+    sideBar.classList.remove('side-menu-bar-active');
 }
