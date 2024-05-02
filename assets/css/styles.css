@@ -1,102 +1,102 @@
 /* header */
-.side-menu-bar {
-    height: 0;
+/* .side-menu-bar { */
+    /* height: 0; */
     /* display: none; */
-    width: 100%;
-    padding-top: 10px;
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    right: 0;
-    background-color: #FFFFFF;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    opacity: 0;
-    transition: all 0.4s;
-}
+    /* width: 100%; */
+    /* padding-top: 10px; */
+    /* position: fixed; */
+    /* z-index: 99; */
+    /* top: 0; */
+    /* right: 0; */
+    /* background-color: #FFFFFF; */
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
+    /* opacity: 0; */
+    /* transition: all 0.4s; */
+/* } */
 
-.side-menu-bar-active {
+/* .side-menu-bar-active { */
     /* display: block; */
-    height: 100%;
-    opacity: 1;
-}
+    /* height: 100%;
+    opacity: 1; */
+/* } */
 
-.side-menu-header {
+/* .side-menu-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
-.side-menu-header-logo {
+/* .side-menu-header-logo {
     height: 28px;
     margin-top: 6px;
-}
+} */
 
-.side-menu-links {
-    position: relative;
-    height: 100%;
+/* .side-menu-links { */
+    /* position: relative; */
+    /* height: 100%; */
     /* width: 100%; */
     /* margin-top: 4rem; */
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
-    justify-content: flex-start;
-}
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: 1.5rem; */
+    /* text-align: center; */
+    /* justify-content: flex-start; */
+/* } */
 
-.side-menu-nav-Links {
-    position: absolute;
+/* .side-menu-nav-Links { */
+    /* position: absolute; */
     /* bottom: 60vh; */
-    margin-top: 4rem;
-    width: 100%;
+    /* margin-top: 4rem;
+    width: 100%; */
     /* Left: -14rem; */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
-    justify-content: flex-start;
-}
+    justify-content: flex-start; */
+/* } */
 
 .side-menu-bar a {
     transition: 0.3s;
 }
 
-.side-menu-bar .closebtn {
+/* .side-menu-bar .closebtn {
     width: 1.5rem;
-}
+} */
 
 .side-menu-blur-bg {
-    position: absolute;
+    /* position: absolute; */
     background: radial-gradient(58.21% 60% at -4.41% 8.74%, rgba(103, 232, 249, 0.3) 0%, rgba(192, 132, 252, 0.3) 100%);
-    filter: blur(50px);
-    Width: 413.07px;
+    /* filter: blur(50px); */
+    /* Width: 413.07px;
     Height: 321.07px;
     Top: 6rem;
     Left: -14rem;
-    rotate: 208.67deg;
+    rotate: 208.67deg; */
 }
 
-.side-menu-footer {
-    position: absolute;
-    bottom: 12vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+/* .side-menu-footer { */
+    /* position: absolute; */
+    /* bottom: 12vh; */
+    /* width: 100%; */
+    /* display: flex; */
+    /* flex-direction: column; */
     /* justify-content: center; */
-    align-items: center;
-}
+     /* align-items: center; */
+/* } */
 
 .side-menu-footer a {
     color: #ACB6C3;
 }
 
-.header-container {
+/* .header-container {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
     width: 95%;
-}
+} */
 
 .header-logo {
     width: 9rem;
@@ -320,7 +320,7 @@ nav a:hover {
 
 .vt-slider-1 {
     color: #4C42B8;
-    animation: slide 5s linear infinite;
+    animation: slide 3s linear infinite;
 }
 
 .vt-slider-2 {
@@ -371,11 +371,11 @@ nav a:hover {
 
 
 /* Pricing */
-.pricing-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+/* .pricing-body { */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+/* } */
 
 .pr-hero-div {
     margin-top: 3rem;
@@ -417,7 +417,7 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     gap: 1rem;
     /* width: 30rem; */
     /* justify-content: flex-start; */
@@ -498,8 +498,8 @@ nav a:hover {
     color: #4C42B8;
 }
 
-.cards-container {
-    margin-top: 4rem;
+.pr-cards-container {
+    margin-top: 0rem;
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: center;

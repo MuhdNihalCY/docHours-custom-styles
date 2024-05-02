@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocHours</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/dochours-log.svg">
+
+    <!-- external styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <!-- font family open sans -->
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <!-- font family avenir -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
+</head>
+
+<body>
+    <!-- header -->
+    <div id="side-menu-bar" class="side-menu-bar mx-auto h-0 w-full pt-2.5 fixed z-50 top-0 right-0 bg-white overflow-x-hidden overflow-y-hidden opacity-0 transition-all duration-300">
+        <div class="side-menu-header w-full flex justify-between items-center px-4">
+            <a href="/" class="logo">
+                <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/dochours-log.svg" alt="" srcset="">
+            </a>
+            <a href="javascript:void(0)" onclick="closeSideBar()" class="closebtn w-6">
+                <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/close-arrow.svg" alt="close-arrow" srcset="">
+            </a>
+            <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        </div>
+        <nav class="side-menu-links relative h-full flex flex-col gap-6 text-center justify-start">
+            <div class="side-menu-nav-Links absolute mt-16 w-full flex flex-col gap-6 text-center justify-start">
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/contactpage.html">Contact</a>
+                <a class="login-register-btn" href="#">Login / Register</a>
+            </div>
+            <div class="side-menu-blur-bg absolute blur-3xl w-[413.07px] h-[321.07px] top-24 left-[-14rem] rotate-[208.67deg]"></div>
+            <div class="side-menu-footer absolute bottom-20 w-full flex flex-col items-center">
+                <div class="flex justify-between gap-12 mt-8 text-gray-400 ">
+                    <a href="#" class="cursor-pointer">Terms & Conditions</a>
+                    <a href="#" class="cursor-pointer">Privacy Policy</a>
+                </div>
+                <div class="flex justify-between gap-4 mt-8">
+                    <img src="/assets/img/facebook.svg" class="social-icons" />
+                    <img src="/assets/img/instagram.svg" class="social-icons" />
+                    <img src="/assets/img/twitter.svg" class="social-icons" />
+                    <img src="/assets/img/linkedin.svg" class="social-icons" />
+                    <img src="/assets/img/youtube.svg" class="social-icons" />
+                </div>
+            </div>
+        </nav>
+        <!-- <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="#">Contact</a>
+        <a href="#">Login / Register</a> -->
+
+    </div>
+    <header
+        class="container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-full md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl">
+        <div class="header-container w-full 2xl:w-4/5 flex justify-between mt-4 w-[95%]">
+            <div class="header-left-sec ">
+                <a href="/" class="logo">
+                    <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
+                </a>
+            </div>
+            <nav class="header-right-sec hidden md:flex">
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/contactpage.html">Contact</a>
+                <a class="login-register-btn" href="#">Login / Register</a>
+            </nav>
+            <img src="/assets/img/hamburger-menu.svg" onclick="openSideBar()" class="menu-icon md:hidden" alt="menu"
+                srcset="">
+        </div>
+    </header>
+
+    <div
+        class="container mx-auto flex flex-col items-center px-4 md:px-0 md:justify-normal md:justify-center md:max-w-full md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl">
+        <div class="mt-24 flex flex-col gap-10 justify-between w-full 2xl:w-4/5 md:flex-row">
+            <div class=" relative w-full flex flex-col justify-center items-center md:w-[40%] md:py-20 md:justify-start md:items-start">
+                <h3 class="font-['Avenir'] text-[40px] font-extrabold w-full text-center px-6 md:p-0 md:text-start md:w-[292px]">We'd Love to Hear From You!</h3>
+                <p class="font-['Open_Sans'] w-full md:text-center px-6 md:p-0 md:text-start">Have questions? Fill out the form below and one of our team members will
+                    reach out as soon as possible.</p>
+                <img src="/assets/img/contact-side-img.svg" class="mt-20 w-44 md:w-52 lg:w-64" alt="" srcset="">
+                <img class="absolute top-[238px] left-[94px] -z-10 md:top-[374px] md:left-[-21px] lg:top-[374px] lg:left-[-94px]" src="/assets/img/contact-dots-bg.svg" alt="" srcset="">
+            </div>
+            <div class="w-full md:w-[55%]  border border-[#F0F0F0] rounded-3xl p-12 md:px-16 pb-7 relative bg-white bg-opacity-30">
+                <h3 class="font-['Avenir'] text-3xl font-extrabold my-3">Submit a Request</h3>
+                <input 
+                    class="font-normal w-full my-4 p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-[#4C42B8]"
+                    type="text" name="name" placeholder="Your name">
+                <input
+                    class="font-normal w-full my-4 p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-[#4C42B8]"
+                    type="text" name="email" placeholder="Your email">
+                <input
+                    class="font-normal w-full my-3 mb-6 p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-[#4C42B8]"
+                    type="text" name="phone" placeholder="Your phone">
+                <label class="font-['Avenir'] text-sm font-extrabold  my-4 " for="message">Optional</label>
+                <textarea
+                    class="font-normal w-full my-3  p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-[#4C42B8]"
+                    name="message" id="message" rows="10" placeholder="Your message"></textarea>
+                <div class="w-full flex items-center justify-center">
+                    <button
+                        class="try-free-btn mt-2 font-thin contact-btn text-base font-medium w-32">Submit
+                        <svg id="arrow-contact-submit" width="35" height="14" viewBox="0 0 22 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path class="transition-all duration-500" id="arrow-path-contact-submit"
+                                d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13" stroke="#6AC37F" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="absolute top-[215px] left-[-104px] rotate-[135deg] blur-[140px] -z-50 contact-bg-gradient bg-gradient-to-r from-[#67E8F9BF] to-[#C084FCBF] rounded-xl h-56 w-64"></div>
+            </div>
+        </div>
+        <div class="mt-16 mb-4 flex flex-col md:flex-row gap-10 md:justify-between w-full 2xl:w-4/5">
+            <div class="w-full md:w-[48%] border flex rounded-3xl py-4 px-8 justify-start" >
+                <img src="/assets/img/mail-img-contact.png" class="w-[70px] h-[70px]" alt="" srcset="">
+                <div class="flex flex-col justify-center pl-4">
+                    <h3 class="font-['Avenir'] text-xl font-extrabold " >Contact Us @</h3>
+                    <p>support@dochours.com</p>
+                </div>
+            </div>
+            <div class="w-full md:w-[48%] border flex rounded-3xl py-4 px-8 justify-start" >
+                <img src="/assets/img/phone-icon-contact.png" class="w-[70px] h-[70px]" alt="" srcset="">
+                <div class="flex flex-col justify-center pl-4">
+                    <h3 class="font-['Avenir'] text-xl font-extrabold " >Phone</h3>
+                    <p>987 654 3210, 0495 123 456</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- stramlining -->
+    <div class="streamlining-section flex flex-col items-center justify-center w-full mt-16 w-full px-4 pl-4 ">
+        <!-- <div class="badge w-52 px-4 py-2">
+            <span class="green-icon rounded-full"></span>
+            <h1 class="badge-text">STREAMLINING CARE</h1>
+            <span class="green-icon rounded-full"></span>
+        </div> -->
+        <div class="container mx-auto pricing-body flex flex-col items-center">
+            <div class="badge pr-badge">
+                <span class="badge-circle"></span>
+                <h1 class="badge-title">LOREM IPSUM</h1>
+                <span class="badge-circle"></span>
+            </div>
+            <!-- font-semibold -->
+            <h1 class="stremlining-title text-3xl font-semibold text-center mt-2">Lorem Ipsum is simply dummy text </h1>
+            <div id="vertical-text-slider" class="vertical-text-slider">
+                <h2 class="vt-slider-1 ">Faster Bookings</h2>
+                <h2 class="vt-slider-2 ">Quicker Care</h2>
+                <h2 class="vt-slider-3 ">Deeper Insights</h2>
+            </div>
+            <p class=" text-base mt-4 w-10/12 md:w-4/6 lg:w-3/6 font-extralight text-center">Lorem Ipsum is simply dummy
+                text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            <!-- <div class="flex justify-center items-center mt-2 mb-4">
+            <a class="custom-btn mt-6 mb-4 px-6 py-3" href="#">
+                Try it for free
+                <svg id="arrow" width="30" height="14" viewBox="0 0 22 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path id="arrow-path" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13" stroke="#6AC37F"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div> -->
+            <a class="try-free-btn try-free-btn-stremlinig mt-6 font-thin" href="#">
+                Try it for free
+                <svg id="arrow-stremlining" width="30" height="14" viewBox="0 0 22 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path id="arrow-path-stremlining" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13" stroke="#6AC37F"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+            <img src="/assets/img/rocket.gif" alt="Rocket" />
+        </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <div class="footer-section flex flex-col items-center justify-center px-6 py-12 relative ">
+        <h1 class="text-3xl font-semibold text-center md:w-4/12 w-full leading-10">Subscribe to our newsletter to get
+            the latest updates</h1>
+        <!-- <h1 class="text-3xl font-bold text-center mt-1">simply dummy text</h1> -->
+        <div class="flex rounded-full border mt-12 relative">
+            <input placeholder="Your email" type="email"
+                class="px-5 py-3 bg-gray-100 placeholder:italic text-sm font-light rounded-full w-80 md:w-96 " />
+            <button class="submit-btn absolute top-0 right-0 bg-[#4C42B8] text-white rounded-full">Subscribe</button>
+        </div>
+        <div
+            class="flex items-center justify-center gap-4 mt-12 opacity-15 hover:opacity-100 transition ease-in-out delay-50">
+            <!-- <img src="/assets/img/footerLogo.svg" alt="Footer text" style="width: 40px;" />
+            <h1 class="text-4xl text-[#224D91]">doc<span class="font-bold">Hours</span></h1> -->
+            <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
+        </div>
+        <div class="footer-headers mt-6 justify-between md:flex  md:flex-row md:gap-16 footer-links">
+
+            <a href="#" class="cursor-pointer">Features</a>
+            <a href="#" class="cursor-pointer">Pricing</a>
+            <a href="#" class="cursor-pointer">Resources</a>
+            <a href="#" class="cursor-pointer">Support</a>
+            <a href="#" class="cursor-pointer">Blog</a>
+            <a href="#" class="cursor-pointer">Contact Us</a>
+        </div>
+        <div class="flex justify-between gap-12 mt-8 text-gray-400">
+            <a href="#" class="cursor-pointer">Terms & Conditions</a>
+            <a href="#" class="cursor-pointer">Privacy Policy</a>
+        </div>
+        <div class="flex justify-between gap-4 mt-8">
+            <img src="/assets/img/facebook.svg" class="social-icons" />
+            <img src="/assets/img/instagram.svg" class="social-icons" />
+            <img src="/assets/img/twitter.svg" class="social-icons" />
+            <img src="/assets/img/linkedin.svg" class="social-icons" />
+            <img src="/assets/img/youtube.svg" class="social-icons" />
+        </div>
+        <hr class="w-8/12 mt-8 hr" />
+        <div class="flex justify-between gap-12 mt-6 text-gray-400">
+            <span class="font-thin text-sm">© 2024</span>
+            <a href="/index.html" class="flex items-center gap-1 cursor-pointer">
+                <img src="/assets/img/footerLogo.svg" />
+                <span class="font-thin hover:text-blue-800 ">docHours</span>
+
+            </a>
+        </div>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

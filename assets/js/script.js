@@ -123,14 +123,34 @@ if (toggleBtn) {
     })
 }
 
+// contact page
+const contact_sbmt_btn = document.querySelector('.contact-btn');
+const contact_btn_arr_path = document.querySelector('#arrow-path-contact-submit');
+
+if (contact_sbmt_btn) {
+    // Define the original and new d attribute values
+const originalD_contact_btn = 'M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13';
+const newD_contact_btn = 'M28 7L1 7M28 7L21.0511 1M28 7L21.0511 13';
+
+    contact_sbmt_btn.addEventListener('mouseover', () => {
+        // Change the d attribute to the new value when hovered
+        contact_btn_arr_path.setAttribute('d', newD_contact_btn);
+    });
+    contact_sbmt_btn.addEventListener('mouseout', () => {
+        // Revert the d attribute to the original value when not hovered
+        contact_btn_arr_path.setAttribute('d', originalD_contact_btn);
+    });
+}
 
 // side bar
 function openSideBar() {
     const sideBar = document.getElementById('side-menu-bar');
-    sideBar.classList.add('side-menu-bar-active');
+    sideBar.classList.add('opacity-100','h-full');
 }
 
 function closeSideBar() {
     const sideBar = document.getElementById('side-menu-bar');
-    sideBar.classList.remove('side-menu-bar-active');
+    sideBar.classList.remove('opacity-100','h-full');
 }
+
+

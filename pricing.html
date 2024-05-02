@@ -19,26 +19,26 @@
 
 <body>
     <!-- header -->
-    <div id="side-menu-bar" class=" side-menu-bar  mx-auto">
-        <div class="side-menu-header px-4">
+    <div id="side-menu-bar" class=" side-menu-bar mx-auto h-0 w-full pt-2.5 fixed z-50 top-0 right-0 bg-white overflow-x-hidden overflow-y-hidden opacity-0 transition-all duration-300">
+        <div class="side-menu-header w-full flex justify-between items-center px-4">
             <a href="/" class="logo">
-                <img class="side-menu-header-logo" src="/assets/img/dochours-log.svg" alt="" srcset="">
+                <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/dochours-log.svg" alt="" srcset="">
             </a>
-            <a href="javascript:void(0)" onclick="closeSideBar()" class="closebtn">
-                <img class="side-menu-header-logo" src="/assets/img/close-arrow.svg" alt="close-arrow" srcset="">
+            <a href="javascript:void(0)" onclick="closeSideBar()" class="closebtn w-6">
+                <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/close-arrow.svg" alt="close-arrow" srcset="">
             </a>
             <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-        </div>
-        <nav class="side-menu-links">
-            <div class="side-menu-nav-Links">
+        </div> 
+        <nav class="side-menu-links relative h-full flex flex-col gap-6 text-center justify-start">
+            <div class="side-menu-nav-Links absolute mt-16 w-full flex flex-col gap-6 text-center justify-start ">
                 <a href="#">Home</a>
                 <a href="#">Features</a>
                 <a href="/pricing.html">Pricing</a>
-                <a href="#">Contact</a>
+                <a href="/contactpage.html">Contact</a>
                 <a class="login-register-btn" href="#">Login / Register</a>
             </div>
-            <div class="side-menu-blur-bg"></div>
-            <div class="side-menu-footer">
+            <div class="side-menu-blur-bg absolute blur-3xl w-[413.07px] h-[321.07px] top-24 left-[-14rem] rotate-[208.67deg]"></div>
+            <div class="side-menu-footer absolute bottom-20 w-full flex flex-col items-center">
                 <div class="flex justify-between gap-12 mt-8 text-gray-400 ">
                     <a href="#" class="cursor-pointer">Terms & Conditions</a>
                     <a href="#" class="cursor-pointer">Privacy Policy</a>
@@ -61,17 +61,17 @@
     </div>
     <header
         class="container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-full md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl">
-        <div class="header-container w-full 2xl:w-4/5 ">
+        <div class="header-container w-full 2xl:w-4/5 flex justify-between mt-4 w-[95%]">
             <div class="header-left-sec ">
                 <a href="/" class="logo">
-                    <img class="header-logo" src="/assets/img/dochours-logo.svg" alt="" srcset="">
+                    <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
                 </a>
             </div>
             <nav class="header-right-sec hidden md:flex">
                 <a href="#">Home</a>
                 <a href="#">Features</a>
                 <a href="/pricing.html">Pricing</a>
-                <a href="#">Contact</a>
+                <a href="/contactpage.html">Contact</a>
                 <a class="login-register-btn" href="#">Login / Register</a>
             </nav>
             <img src="/assets/img/hamburger-menu.svg" onclick="openSideBar()" class="menu-icon md:hidden" alt="menu"
@@ -79,7 +79,7 @@
         </div>
     </header>
 
-    <div class="container mx-auto pricing-body px-2 md:px-0">
+    <div class="container mx-auto pricing-body flex flex-col items-center px-2 md:px-0">
         <div class="pr-hero-div max-w-screen-sm sm:max-w-screen-md">
             <h2 class="pr-hero-title">Choose the plan that works for you</h2>
             <p class="pr-hero-subtitle">Lorem Ipsum is simply dummy text of the printing industry</p>
@@ -96,7 +96,7 @@
                 </label>
                 <p id="monthly-label">Pay Monthly</p>
             </div>
-            <div class="cards-container gap-5 content-center max-w-full sm:w-sm md:w-full pr-cards-container">
+            <div class="cards-container gap-5 content-center max-w-full sm:w-sm md:w-full pr-cards-container mt-16">
                 <div class="card ">
                     <div class="pr-card-header">
                         <div class="badge pr-badge">
@@ -279,7 +279,7 @@
             <h1 class="badge-text">STREAMLINING CARE</h1>
             <span class="green-icon rounded-full"></span>
         </div> -->
-        <div class="container mx-auto pricing-body">
+        <div class="container mx-auto pricing-body flex flex-col items-center">
             <div class="badge pr-badge">
                 <span class="badge-circle"></span>
                 <h1 class="badge-title">LOREM IPSUM</h1>
@@ -332,7 +332,7 @@
             class="flex items-center justify-center gap-4 mt-12 opacity-15 hover:opacity-100 transition ease-in-out delay-50">
             <!-- <img src="/assets/img/footerLogo.svg" alt="Footer text" style="width: 40px;" />
             <h1 class="text-4xl text-[#224D91]">doc<span class="font-bold">Hours</span></h1> -->
-            <img class="header-logo" src="/assets/img/dochours-logo.svg" alt="" srcset="">
+            <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
         </div>
         <div class="footer-headers mt-6 justify-between md:flex  md:flex-row md:gap-16 footer-links">
 
@@ -366,6 +366,7 @@
     </div>
 
     <script src="/assets/js/script.js"></script>
+    <script type="module" src="/assets/js/tailwind.config.js"></script>
 </body>
 
 </html>
