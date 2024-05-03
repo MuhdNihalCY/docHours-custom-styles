@@ -67,71 +67,15 @@
     }
 }
 
-.pr-hero-div {
-    margin-top: 3rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pr-hero-title {
-    font-size: 40px;
-    font-weight: 500;
-    font-family: Avenir;
-    line-height: 54.64px;
-    text-align: center;
-
-}
-
-.pr-hero-subtitle {
-    font-family: Open Sans;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 21.79px;
-    text-align: center;
-    color: #212C38;
-    margin-top: 10px;
-}
-
-.pricing-sec-div {
-    margin-top: 3rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pricing-toggle-sec {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
 
 .pricing-save {
     background-color: #EEF0F2;
-    width: 77px;
-    height: 25px;
-    border-radius: 27px;
-    font-family: Open Sans;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 25px;
-    letter-spacing: -0.20000000298023224px;
-    text-align: center;
-    color: #C8C8C8;
+    color: #C8C8C8; 
 }
 
 .pricing-save-active {
     background-color: #FEC753;
     color: #000000;
-}
-
-.pricing-toggle-sec p {
-    color: #343F4C;
-    width: 100px;
 }
 
 .pricing-lable-active {
