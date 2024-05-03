@@ -19,7 +19,7 @@
 
 <body>
     <!-- header -->
-    <div id="side-menu-bar" class=" side-menu-bar mx-auto h-0 w-full pt-2.5 fixed z-50 top-0 right-0 bg-white overflow-x-hidden overflow-y-hidden opacity-0 transition-all duration-300">
+    <div id="side-menu-bar" class="side-menu-bar mx-auto h-0 w-full pt-2.5 fixed z-50 top-0 right-0 bg-white overflow-x-hidden overflow-y-hidden opacity-0 transition-all duration-300">
         <div class="side-menu-header w-full flex justify-between items-center px-4">
             <a href="/" class="logo">
                 <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/dochours-log.svg" alt="" srcset="">
@@ -28,9 +28,9 @@
                 <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/close-arrow.svg" alt="close-arrow" srcset="">
             </a>
             <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-        </div> 
+        </div>
         <nav class="side-menu-links relative h-full flex flex-col gap-6 text-center justify-start">
-            <div class="side-menu-nav-Links absolute mt-16 w-full flex flex-col gap-6 text-center justify-start ">
+            <div class="side-menu-nav-Links absolute mt-16 w-full flex flex-col gap-6 text-center justify-start">
                 <a href="#">Home</a>
                 <a href="#">Features</a>
                 <a href="/pricing.html">Pricing</a>
@@ -60,26 +60,26 @@
 
     </div>
     <header
-        class="container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-full md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl">
-        <div class="header-container w-full 2xl:w-4/5 flex justify-between mt-4 w-[95%]">
+        class="container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl  lg:w-full lg:px-10  xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px]">
+        <div class="header-container w-full 2xl:w-full flex justify-between mt-4 ">
             <div class="header-left-sec ">
                 <a href="/" class="logo">
                     <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
                 </a>
             </div>
-            <nav class="header-right-sec hidden md:flex">
+            <nav class="header-right-sec hidden flex items-center gap-9 md:flex">
                 <a href="#">Home</a>
                 <a href="#">Features</a>
                 <a href="/pricing.html">Pricing</a>
                 <a href="/contactpage.html">Contact</a>
-                <a class="login-register-btn" href="#">Login / Register</a>
+                <a class="login-register-btn border-l border-solid border-[#dadada] pl-4" href="#">Login / Register</a>
             </nav>
-            <img src="/assets/img/hamburger-menu.svg" onclick="openSideBar()" class="menu-icon md:hidden" alt="menu"
+            <img src="/assets/img/hamburger-menu.svg" onclick="openSideBar()" class="menu-icon md:hidden h-6" alt="menu"
                 srcset="">
         </div>
     </header>
 
-    <div class="container mx-auto pricing-body flex flex-col items-center px-2 md:px-0">
+    <div class="container mx-auto pricing-body flex flex-col items-center px-2 md:px-0 md:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12  lg:w-full min-[1024px]:px-10   xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px]">
         <div class="pr-hero-div max-w-screen-sm sm:max-w-screen-md">
             <h2 class="pr-hero-title">Choose the plan that works for you</h2>
             <p class="pr-hero-subtitle">Lorem Ipsum is simply dummy text of the printing industry</p>
@@ -96,8 +96,8 @@
                 </label>
                 <p id="monthly-label">Pay Monthly</p>
             </div>
-            <div class="cards-container gap-5 content-center max-w-full sm:w-sm md:w-full pr-cards-container mt-16">
-                <div class="card ">
+            <div class="cards-container gap-5 content-center max-w-full sm:w-sm md:w-full pr-cards-container mt-16 flex md:flex-row justify-between gap-5 relative">
+                <div class="card border border-[#EDEDED] bg-[#fbfbfc4c] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-[352px] h-[484] relative">
                     <div class="pr-card-header">
                         <div class="badge pr-badge">
                             <span class="badge-circle"></span>
@@ -133,18 +133,18 @@
                         </div>
                     </div>
                     <div class="plan-getstart-btn-div">
-                        <a class="try-free-btn free-plan-btn plan-slt-btn" href="#">
+                        <a class="try-free-btn free-plan-btn plan-slt-btn mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2" href="#">
                             Get Start
                             <svg id="arrow-pr-free" width="30" height="14" viewBox="0 0 22 14" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path id="arrow-path-pr-free" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13"
                                     stroke="#6AC37F" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                    class="transition-all duration-500" stroke-linejoin="round" />
                             </svg>
                         </a>
                     </div>
                 </div>
-                <div class="card ">
+                <div class="card border border-[#EDEDED] bg-[#fbfbfc4c] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-[352px] h-[484] relative">
                     <div class="pr-card-header">
                         <div class="badge pr-badge">
                             <span class="badge-circle"></span>
@@ -175,34 +175,20 @@
                             <p class="plan-feature-text"><span class="plan-feature-bold">Full access</span> to all
                                 features</p>
                         </div>
-                        <div class="plan-feature">
-                            <span class="plan-feature-bullet rounded-full"></span>
-                            <p class="plan-feature-text"><span class="plan-feature-bold">3000</span> SMS Credits</p>
-                        </div>
-                        <div class="plan-feature">
-                            <span class="plan-feature-bullet rounded-full"></span>
-                            <p class="plan-feature-text"><span class="plan-feature-bold">Upto 1000</span> Appointment
-                                limits</p>
-                        </div>
-                        <div class="plan-feature">
-                            <span class="plan-feature-bullet rounded-full"></span>
-                            <p class="plan-feature-text"><span class="plan-feature-bold">Full access</span> to all
-                                features</p>
-                        </div>
                     </div>
                     <div class="plan-getstart-btn-div">
-                        <a class="try-free-btn basic-plan-btn plan-slt-btn" href="#">
+                        <a class="try-free-btn basic-plan-btn plan-slt-btn mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2" href="#">
                             Get Start
                             <svg id="arrow-pr-basic" width="30" height="14" viewBox="0 0 22 14" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path id="arrow-path-pr-basic" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13"
                                     stroke="#6AC37F" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                    class="transition-all duration-500" stroke-linejoin="round" />
                             </svg>
                         </a>
                     </div>
                 </div>
-                <div class="card ">
+                <div class="card border border-[#EDEDED] bg-[#fbfbfc4c] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-[352px] h-[484] relative">
                     <div class="pr-card-header">
                         <div class="badge pr-badge">
                             <span class="badge-circle"></span>
@@ -237,29 +223,15 @@
                             <span class="plan-feature-bullet rounded-full"></span>
                             <p class="plan-feature-text"><span class="plan-feature-bold">7500</span> SMS Credits</p>
                         </div>
-                        <div class="plan-feature">
-                            <span class="plan-feature-bullet rounded-full"></span>
-                            <p class="plan-feature-text"><span class="plan-feature-bold">Upto 2500</span> Appointment
-                                limits</p>
-                        </div>
-                        <div class="plan-feature">
-                            <span class="plan-feature-bullet rounded-full"></span>
-                            <p class="plan-feature-text"><span class="plan-feature-bold">Full access</span> to all
-                                features</p>
-                        </div>
-                        <div class="plan-feature">
-                            <span class="plan-feature-bullet rounded-full"></span>
-                            <p class="plan-feature-text"><span class="plan-feature-bold">7500</span> SMS Credits</p>
-                        </div>
                     </div>
                     <div class="plan-getstart-btn-div">
-                        <a class="try-free-btn growth-plan-btn plan-slt-btn" href="#">
+                        <a class="try-free-btn growth-plan-btn plan-slt-btn mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2" href="#">
                             Get Start
                             <svg id="arrow-pr-growth" width="30" height="14" viewBox="0 0 22 14" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path id="arrow-path-pr-growth" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13"
                                     stroke="#6AC37F" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                    class="transition-all duration-500" stroke-linejoin="round" />
                             </svg>
                         </a>
                     </div>
@@ -305,12 +277,12 @@
                 </svg>
             </a>
         </div> -->
-            <a class="try-free-btn try-free-btn-stremlinig mt-6 font-thin" href="#">
+            <a class="try-free-btn try-free-btn-stremlinig mt-6 font-thin mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2" href="#">
                 Try it for free
                 <svg id="arrow-stremlining" width="30" height="14" viewBox="0 0 22 14" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path id="arrow-path-stremlining" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13" stroke="#6AC37F"
-                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    class="transition-all duration-500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </a>
             <img src="/assets/img/rocket.gif" alt="Rocket" />

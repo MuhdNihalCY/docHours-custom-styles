@@ -60,30 +60,30 @@
 
     </div>
     <header
-        class="container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-full md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl">
-        <div class="header-container w-full 2xl:w-4/5 flex justify-between mt-4 w-[95%]">
+        class="container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl  lg:w-full lg:px-10  xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px]">
+        <div class="header-container w-full 2xl:w-full flex justify-between mt-4 ">
             <div class="header-left-sec ">
                 <a href="/" class="logo">
                     <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
                 </a>
             </div>
-            <nav class="header-right-sec hidden md:flex">
+            <nav class="header-right-sec hidden flex items-center gap-9 md:flex">
                 <a href="#">Home</a>
                 <a href="#">Features</a>
                 <a href="/pricing.html">Pricing</a>
                 <a href="/contactpage.html">Contact</a>
-                <a class="login-register-btn" href="#">Login / Register</a>
+                <a class="login-register-btn border-l border-solid border-[#dadada] pl-4" href="#">Login / Register</a>
             </nav>
-            <img src="/assets/img/hamburger-menu.svg" onclick="openSideBar()" class="menu-icon md:hidden" alt="menu"
+            <img src="/assets/img/hamburger-menu.svg" onclick="openSideBar()" class="menu-icon md:hidden h-6" alt="menu"
                 srcset="">
         </div>
     </header>
 
     <div
-        class="container mx-auto flex flex-col items-center px-4 md:px-0 md:justify-normal md:justify-center md:max-w-full md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl">
-        <div class="mt-24 flex flex-col gap-10 justify-between w-full 2xl:w-4/5 md:flex-row">
+        class="container mx-auto flex flex-col items-center px-4 md:px-0 md:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12  lg:w-full min-[1024px]:px-10   xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px]">
+        <div class="mt-24 flex flex-col gap-10 justify-between w-full 2xl:w-full md:flex-row ">
             <div class=" relative w-full flex flex-col justify-center items-center md:w-[40%] md:py-20 md:justify-start md:items-start">
-                <h3 class="font-['Avenir'] text-[40px] font-extrabold w-full text-center px-6 md:p-0 md:text-start md:w-[292px]">We'd Love to Hear From You!</h3>
+                <h3 class="font-['Avenir'] text-[40px] font-extrabold w-full md:text-center px-6 md:p-0 md:text-start md:w-[292px]">We'd Love to Hear From You!</h3>
                 <p class="font-['Open_Sans'] w-full md:text-center px-6 md:p-0 md:text-start">Have questions? Fill out the form below and one of our team members will
                     reach out as soon as possible.</p>
                 <img src="/assets/img/contact-side-img.svg" class="mt-20 w-44 md:w-52 lg:w-64" alt="" srcset="">
@@ -92,45 +92,49 @@
             <div class="w-full md:w-[55%]  border border-[#F0F0F0] rounded-3xl p-12 md:px-16 pb-7 relative bg-white bg-opacity-30">
                 <h3 class="font-['Avenir'] text-3xl font-extrabold my-3">Submit a Request</h3>
                 <input 
-                    class="font-normal w-full my-4 p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-[#4C42B8]"
+                    class="font-normal w-full my-4 p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-none focus:border-[#4C42B8]"
                     type="text" name="name" placeholder="Your name">
                 <input
-                    class="font-normal w-full my-4 p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-[#4C42B8]"
+                    class="font-normal w-full my-4 p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-none focus:border-[#4C42B8]"
                     type="text" name="email" placeholder="Your email">
                 <input
-                    class="font-normal w-full my-3 mb-6 p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-[#4C42B8]"
+                    class="font-normal w-full my-3 mb-6 p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-none focus:border-[#4C42B8]"
                     type="text" name="phone" placeholder="Your phone">
                 <label class="font-['Avenir'] text-sm font-extrabold  my-4 " for="message">Optional</label>
                 <textarea
-                    class="font-normal w-full my-3  p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-[#4C42B8]"
+                    class="font-normal w-full my-3  p-4 text-sm font-['Open_Sans'] placeholder:italic border border-[#E9E9E9] rounded-xl outline-none focus:border-[#4C42B8]"
                     name="message" id="message" rows="10" placeholder="Your message"></textarea>
                 <div class="w-full flex items-center justify-center">
                     <button
-                        class="try-free-btn mt-2 font-thin contact-btn text-base font-medium w-32">Submit
+                        class="try-free-btn mt-2 font-thin contact-btn text-base font-medium w-32 relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2 w-24  ">Submit
+                       <!--  before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:opacity-0 before:transition-opacity before:duration-500 before:-z-1 before:rounded-3xl hover:before:opacity-10 -->
                         <svg id="arrow-contact-submit" width="35" height="14" viewBox="0 0 22 14" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path class="transition-all duration-500" id="arrow-path-contact-submit"
                                 d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13" stroke="#6AC37F" stroke-width="1.5"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        </svg> 
                     </button>
                 </div>
                 <div class="absolute top-[215px] left-[-104px] rotate-[135deg] blur-[140px] -z-50 contact-bg-gradient bg-gradient-to-r from-[#67E8F9BF] to-[#C084FCBF] rounded-xl h-56 w-64"></div>
             </div>
         </div>
-        <div class="mt-16 mb-4 flex flex-col md:flex-row gap-10 md:justify-between w-full 2xl:w-4/5">
-            <div class="w-full md:w-[48%] border flex rounded-3xl py-4 px-8 justify-start" >
-                <img src="/assets/img/mail-img-contact.png" class="w-[70px] h-[70px]" alt="" srcset="">
+        <div class="mt-16 mb-4 flex flex-col sm:flex-row gap-10 md:justify-between w-full lg:w-full xl:px-10  xl:w-[1100px] 2xl:w-[1100px] xl:max-w-[1100px]">
+            <div class="w-full md:w-[48%] border flex rounded-3xl py-4 px-2 min-[350px]:px-4 sm:px-2 justify-start" >
+                <img src="/assets/img/mail-img-contact.png" class="w-[70px] h-[70px] sm:w-[60px] sm:h-[60px] md:w-[70px] h-[70px]" alt="" srcset="">
                 <div class="flex flex-col justify-center pl-4">
                     <h3 class="font-['Avenir'] text-xl font-extrabold " >Contact Us @</h3>
                     <p>support@dochours.com</p>
                 </div>
             </div>
-            <div class="w-full md:w-[48%] border flex rounded-3xl py-4 px-8 justify-start" >
+            <div class="w-full md:w-[48%] border flex rounded-3xl py-4 px-2 min-[350px]:px-4 sm:px-8 justify-start " >
                 <img src="/assets/img/phone-icon-contact.png" class="w-[70px] h-[70px]" alt="" srcset="">
                 <div class="flex flex-col justify-center pl-4">
                     <h3 class="font-['Avenir'] text-xl font-extrabold " >Phone</h3>
-                    <p>987 654 3210, 0495 123 456</p>
+                    <div class="flex flex-col sm:flex-col min-[860px]:flex-row gap-1">
+                        <p>987 654 3210,</p> 
+                        <p> 0495 123 456</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,7 +155,7 @@
             </div>
             <!-- font-semibold -->
             <h1 class="stremlining-title text-3xl font-semibold text-center mt-2">Lorem Ipsum is simply dummy text </h1>
-            <div id="vertical-text-slider" class="vertical-text-slider">
+            <div id="vertical-text-slider" class="vertical-text-slider h-9 ">
                 <h2 class="vt-slider-1 ">Faster Bookings</h2>
                 <h2 class="vt-slider-2 ">Quicker Care</h2>
                 <h2 class="vt-slider-3 ">Deeper Insights</h2>
@@ -169,12 +173,12 @@
                 </svg>
             </a>
         </div> -->
-            <a class="try-free-btn try-free-btn-stremlinig mt-6 font-thin" href="#">
+            <a class="try-free-btn try-free-btn-stremlinig mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2 " href="#">
                 Try it for free
                 <svg id="arrow-stremlining" width="30" height="14" viewBox="0 0 22 14" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path id="arrow-path-stremlining" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13" stroke="#6AC37F"
-                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    class="transition-all duration-500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </a>
             <img src="/assets/img/rocket.gif" alt="Rocket" />
