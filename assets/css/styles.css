@@ -1,51 +1,10 @@
 /* header */
-.side-menu-bar a {
-    transition: 0.3s;
-}
-
 .side-menu-blur-bg {
     background: radial-gradient(58.21% 60% at -4.41% 8.74%, rgba(103, 232, 249, 0.3) 0%, rgba(192, 132, 252, 0.3) 100%);
 }
 
-.side-menu-footer a {
-    color: #ACB6C3;
-}
 
-nav a {
-    font-family: 'Open Sans';
-    text-decoration: none;
-    color: #212C38;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 20.43px;
-}
-
-nav a:hover {
-    color: #6AC37F;
-}
-
-
-/* hero section */
-
-.hero-container {
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero-heading {
-    width: 500px;
-    max-width: 80%;
-    font-family: 'Avenir', sans-serif;
-    margin: 1rem 0 0.5rem 0;
-}
-
-.badge-title-bold {
-    font-weight: 700;
-    color: #000000;
-}
-
+/* button gradient */
 .try-free-btn {
     background: linear-gradient(90deg, #4C42B8, #4C42B8);
 }
@@ -68,76 +27,38 @@ nav a:hover {
     opacity: 1;
 }
 
+/* button arrow erffect */
 #arrow,
 #arrow_2 {
     margin-left: 0.2rem;
 }
 
-.hero-img {
-    width: 100%;
-    margin: 2rem 0;
-}
-
-.vertical-text-slider {
-    height: 38px;
-    /* Increased the height to accommodate larger font size */
-    overflow-y: hidden;
-    margin-top: 0.6rem;
-}
-
-.vertical-text-slider h2 {
-    font-size: 30px;
-    /* Changed the font size to 30px */
-    line-height: 35px;
-    /* Adjusted line height to 35px */
-    font-weight: 600;
-    font-family: Avenir;
-    text-align: center;
-}
-
 .vt-slider-1 {
-    color: #4C42B8;
     animation: slide 3s linear infinite;
-}
-
-.vt-slider-2 {
-    color: #6AC37F;
-}
-
-.vt-slider-3 {
-    color: #F25821;
 }
 
 @keyframes slide {
     0% {
         margin-top: -105px;
-        /* Adjusted to account for larger font size */
     }
 
     5% {
-        /* For stopping effect */
         margin-top: -70px;
-        /* Adjusted */
     }
 
     33% {
         margin-top: -70px;
-        /* Adjusted */
     }
 
     38% {
-        /* For stopping effect */
         margin-top: -35px;
-        /* Adjusted */
     }
 
     66% {
         margin-top: -35px;
-        /* Adjusted */
     }
 
     71% {
-        /* For stopping effect */
         margin-top: 0px;
     }
 
@@ -187,8 +108,6 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    /* width: 30rem; */
-    /* justify-content: flex-start; */
 }
 
 .pricing-save {
@@ -263,140 +182,12 @@ nav a:hover {
     color: #4C42B8;
 }
 
-.steps-badge {
-    width: 124px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    background-color: #FAFAFAB2;
-    border: 1px solid #ECECEC;
-    border-radius: 2rem;
-}
-
-.steps-badge-text {
-    font-family: 'Avenir', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 22.2px;
-    text-align: left;
-}
-
-.green-icon {
-    background: #6AC37F;
-    width: 8px;
-    height: 8px;
-}
-
-
-.pr-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-}
-
-.pr-badge,
-.steps-badge {
-    height: 2.3rem;
-    padding: 0 0.1rem;
-}
-
-.pr-card-top-img {
-    margin-top: 10px;
-    width: 8.7rem;
-}
-
-.pr-basic-round-img {
-    width: 7.7rem;
-    margin-bottom: 0.79rem;
-}
-
-.price-div {
-    margin-top: -15px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.rupee-sign {
-    height: 23px;
-}
-
-.price {
-    font-family: Open Sans;
-    font-size: 35px;
-    font-weight: 700;
-    text-align: left;
-    color: #000000;
-}
-
-.pr-card-hr {
-    height: 1px;
-    width: 96%;
-}
-
-.plan-features {
-    margin: 1.5rem 0;
-}
-
-.plan-feature {
-    display: flex;
-    gap: 0.7rem;
-    justify-content: start;
-    align-items: start;
-   
-    margin-bottom: 0.5rem;
-}
-
-.plan-getstart-btn-div {
-    position: absolute;
-    padding-right: 12px;
-    left: 5px;
-    /* top:490px; */
-    bottom: 40px;
-    width: 100%;
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-    /* background: rebeccapurple; */
-}
-
-.plan-slt-btn {
-    width: 153px;
-    height: 50px;
-    margin-left: 4px;
-    font-size: 16px;
-    display: flex;
-    gap: 5px;
-    font-weight: 300;
-    padding: 0.7rem 0.5rem 0.7rem 1.6rem;
-}
-
-
-
 .pr-blur-round-bg {
     background: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(103, 232, 249, 0.9) 0%, rgba(192, 132, 252, 0.9) 100%);
 }
 
-.card-gst-warn {
-    font-size: 12px;
-    font-weight: 300;
-    color: #7E7E7E;
-    margin-top: 2rem;
-}
-
-.gst-warn-star {
-    color: red;
-}
-
 .streamlining-section {
     background-image: url('/assets/img/loremIpsumBg.png');
-    background-repeat: 'no-repeat';
-    background-size: cover;
-    padding-top: 5.2rem;
 }
 
 .stremlining-title {
@@ -408,7 +199,6 @@ nav a:hover {
     width: 11rem;
     display: flex;
     gap: 7px;
-    /* margin-left: 0.2rem; */
 }
 
 .submit-btn {
@@ -421,7 +211,6 @@ nav a:hover {
 
 .social-icons {
     opacity: 0.5;
-    /* -webkit-filter: grayscale(100%);   */
     filter: grayscale(100%);
     transition: opacity 0.3s ease-in-out;
     cursor: pointer;
