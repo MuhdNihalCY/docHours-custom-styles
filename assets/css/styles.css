@@ -148,20 +148,20 @@ nav a:hover {
 
 /* Badge */
 .badge {
-    background-color: #FAFAFA;
+    /* background-color: #FAFAFA;
     border: 1px solid #ECECEC;
-    border-radius: 35px;
+    border-radius: 35px; */
     /* height: 44px; */
-    display: flex;
+    /* display: flex;
     align-items: center;
     width: fit-content;
     justify-content: space-between;
     margin-bottom: 0.5rem;
     text-align: center;
-    padding: 0.5rem 0rem;
+    padding: 0.5rem 0rem; */
 }
 
-.badge-circle {
+/* .badge-circle {
     background: #6AC37F;
     width: 8px;
     height: 8px;
@@ -169,14 +169,14 @@ nav a:hover {
     margin: 0 1rem;
     display: inline-block;
     margin: 0 1rem;
-}
+} */
 
-.badge-title {
+/* .badge-title {
     margin: 0;
     color: #343F4C;
     line-height: 21.79px;
     font-size: 12px;
-}
+} */
 
 .badge-title-bold {
     font-weight: 700;
@@ -560,29 +560,29 @@ nav a:hover {
     margin-bottom: 0.5rem;
 }
 
-.plan-feature-bullet {
+/* .plan-feature-bullet {
     width: 10px;
     height: 10px;
     background: #6AC37F;
     display: inline-block;
-}
+} */
 
-.plan-feature-text {
+/* .plan-feature-text {
     margin-bottom: 0;
     color: #212C38;
     font-weight: 300;
     font-size: 15px;
 
-}
+} */
 
-.plan-feature-bold {
+/* .plan-feature-bold {
     font-size: 15px;
     font-weight: 700;
     line-height: 29px;
-    letter-spacing: -0.20000000298023224px;
+     letter-spacing: -0.20000000298023224px;
     text-align: left;
 
-}
+} */
 
 .plan-getstart-btn-div {
     position: absolute;
@@ -710,22 +710,17 @@ nav a:hover {
 }
 
 @media only screen and (min-width: 1281px) {
-    .pr-cards-container {
+    /* .pr-cards-container {
         grid-template-columns: auto auto auto;
-        /* grid-template-columns: 1fr 1fr 1fr; */
-        /* padding-left: 3rem; */
-        /* padding-right: 3rem; */
         justify-content: space-between;
     }
 
     .card {
-        /* width: 250px; */
         max-width: 354px;
         width: 100%;
-        /* width: 100%; */
         min-height: 554px;
         height: max-content;
-    }
+    } */
 
     .pr-blur-round-bg {
         top: 129px;
@@ -741,22 +736,17 @@ nav a:hover {
 }
 
 @media only screen and (max-width: 1280px) {
-    .pr-cards-container {
+    /* .pr-cards-container {
         grid-template-columns: auto auto auto;
-        /* grid-template-columns: 1fr 1fr 1fr; */
-        /* padding-left: 3rem; */
-        /* padding-right: 3rem; */
         justify-content: space-between;
     }
 
     .card {
-        /* width: 250px; */
         max-width: 354px;
         width: 100%;
-        /* width: 100%; */
         min-height: 554px;
         height: max-content;
-    }
+    } */
 
     .pr-blur-round-bg {
         top: 129px;
@@ -765,11 +755,9 @@ nav a:hover {
 
     .pr-basic-round-img {
         width: 5.7rem;
-        /* margin-bottom: 0.79rem; */
     }
 
     .pr-card-top-img {
-        /* margin-top: 10px; */
         width: 6rem;
     }
 
@@ -777,22 +765,20 @@ nav a:hover {
 
 
 @media only screen and (max-width: 1024px) {
-    .pr-cards-container {
+    /* .pr-cards-container {
         grid-template-columns: auto auto auto;
-        /* grid-template-columns: 1fr 1fr 1fr; */
-    }
+    } */
 
     .pr-blur-round-bg {
         top: 129px;
         left: 200px;
     }
 
-    .card {
+    /* .card {
         width: 250px;
-        /* width: 100%; */
         min-height: 554px;
         height: max-content;
-    }
+    } */
 
     .pr-basic-round-img {
         width: 5.7rem;
@@ -800,21 +786,20 @@ nav a:hover {
     }
 
     .pr-card-top-img {
-        /* margin-top: 10px; */
         width: 6rem;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .pr-cards-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        padding: 0 2rem;
+    /* .pr-cards-container { */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* gap: 1rem; */
+        /* width: 100%; */
+        /* padding: 0 2rem;
         justify-content: center;
-        align-items: center;
-    }
+        align-items: center; */
+    /* } */
 
     .pr-blur-round-bg {
         top: 467px;
@@ -823,10 +808,10 @@ nav a:hover {
 
     .card {
         /* width: 354px; */
-        max-width: 600px;
-        width: 100%;
-        min-height: 554px;
-        height: max-content;
+        /* max-width: 600px; */
+        /* width: 100%; */
+        /* min-height: 554px; */
+        /* height: max-content; */
     }
 
     .footer-links {
