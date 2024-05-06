@@ -160,38 +160,59 @@ const featuresNavbar = document.getElementById('features-hr-scroll');
 const featuresBody = document.getElementById('features');
 const allFeatures = document.querySelectorAll('.features-sec');
 const featuresNavLinks = document.querySelectorAll('#features-hr-scroll a');
-const featuresNavContainer = document.getElementById('features-hr-scroll');
+const featuresNavContainer = document.getElementById('featuresNav');
 
 if (featuresNavbar) {
     window.onscroll = function () { toggleNav() };
 
-    var sticky = featuresBody.offsetTop -20;
+    var sticky = featuresBody.offsetTop - 20;
 
     function toggleNav() {
         if (window.pageYOffset >= sticky) {
             featuresNavbar.classList.add("hr-scroll-sticky");
-            
+
             allFeatures.forEach(feature => {
                 let top = window.scrollY;
+                let leftX = window.scrollY
                 let offset = feature.offsetTop;
-                let height = feature.offsetHeight;
+                // let height = feature.offsetHeight;
                 let id = feature.getAttribute('id');
 
-                if (top >= offset-200 ) {
+                if (top >= offset - 200) {
                     featuresNavLinks.forEach(featureLink => {
                         featureLink.classList.remove('hr-scroll-acitve');
                     })
-                    featuresNavContainer.querySelector(`a[href="#${id}"]`).classList.add('hr-scroll-acitve');
+                    const specificFeature = featuresNavContainer.querySelector(`a[href="#${id}"]`);
+                    specificFeature.classList.add('hr-scroll-acitve');
+
+                    const scrollPostion = specificFeature.getBoundingClientRect();
+
+                    // The rect object contains the element's position and size relative to the viewport
+                    // console.log('Top:', scrollPostion.top);  
+                    console.log("Left X : ",leftX)      // Top position of the element relative to the viewport
+                    console.log('Left:', scrollPostion.left);      // Left position of the element relative to the viewport
+                    // console.log('Bottom:', scrollPostion.bottom);  // Bottom position of the element relative to the viewport
+                    console.log('Right:', scrollPostion.right);    // Right position of the element relative to the viewport
+                    // console.log('Width:', scrollPostion.width);    // Width of the element
+                    // console.log('Height:', scrollPostion.height);  // Height of the element
+
+                    // You can use scrollPostion.left to get the left position (x-axis) of the element
+                    const elementPositionX = scrollPostion.left;
+
+                            featuresNavContainer.scrollTo({
+                                left: scrollPostion.left - 50,
+                                behavior: 'smooth'
+                            });
+
+                    console.log('The x-axis position of the element is:', elementPositionX);
+
                 }
             })
-      
+
         } else {
             featuresNavbar.classList.remove("hr-scroll-sticky");
         }
 
 
     }
-
-
-
 }
