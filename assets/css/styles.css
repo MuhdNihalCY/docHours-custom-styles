@@ -70,7 +70,7 @@
 
 .pricing-save {
     background-color: #EEF0F2;
-    color: #C8C8C8; 
+    color: #C8C8C8;
 }
 
 .pricing-save-active {
@@ -197,4 +197,42 @@
         text-align: center;
         column-gap: 1rem;
     }
+}
+
+/* horizontal scroll slider  */
+.hr-scroll {
+    box-shadow: 0px 4px 4px 0px #0000000D;
+}
+
+.hr-scroll-acitve {
+    border-bottom: 3px solid;
+}
+
+.hr-scroll-acitve::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    /* Adjust border width as necessary */
+    border-image: linear-gradient(90deg, #121212 0%, #11144F 100%);
+    border-image-slice: 1;
+    pointer-events: none;
+    /* Makes sure it doesn't interfere with interactions */
+}
+
+.hide-scrollbar {
+
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
