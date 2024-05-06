@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    scroll-behavior: smooth;
+}
+
 /* header */
 .side-menu-blur-bg {
     background: radial-gradient(58.21% 60% at -4.41% 8.74%, rgba(103, 232, 249, 0.3) 0%, rgba(192, 132, 252, 0.3) 100%);
@@ -201,27 +207,47 @@
 
 /* horizontal scroll slider  */
 .hr-scroll {
+    /* position: absolute; */
     box-shadow: 0px 4px 4px 0px #0000000D;
+    /* top: -100px; */
+    /* top: -4rem; */
+    height: 0rem;
+}
+
+.hr-scroll a {
+    transition: 0.5s all;
+    /* padding-top: 1.2rem;
+    padding-bottom: 1.2rem; */
 }
 
 .hr-scroll-acitve {
-    border-bottom: 3px solid;
+    border-bottom: 3px solid #11144F;
+    /* padding-bottom: 1.1rem; */
+    /* border-image: linear-gradient(90deg, #121212 0%, #11144F 100%); */
 }
 
-.hr-scroll-acitve::before {
+.hr-scroll-sticky {
+    position: fixed;
+    top: 0; 
+    height: 4rem;
+    /* transition: 0.5s all; */
+    /* height: 4rem; */
+}
+
+.hr-scroll-top-active {
+}
+
+
+/* .hr-scroll-acitve::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid transparent;
-    /* Adjust border width as necessary */
+    border: 2px solid;
     border-image: linear-gradient(90deg, #121212 0%, #11144F 100%);
-    border-image-slice: 1;
-    pointer-events: none;
-    /* Makes sure it doesn't interfere with interactions */
-}
+} */
 
 .hide-scrollbar {
 
@@ -236,3 +262,16 @@
     scrollbar-width: none;
     /* Firefox */
 }
+
+/* #features-hr-scroll nav a {
+    position: relative;
+    transition: 0.5s all 0;
+} */
+
+/* #features-hr-scroll nav a:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid black;
+    width: 100%;
+    bottom: -3px;
+} */

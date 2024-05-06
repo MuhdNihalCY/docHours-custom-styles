@@ -129,8 +129,8 @@ const contact_btn_arr_path = document.querySelector('#arrow-path-contact-submit'
 
 if (contact_sbmt_btn) {
     // Define the original and new d attribute values
-const originalD_contact_btn = 'M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13';
-const newD_contact_btn = 'M28 7L1 7M28 7L21.0511 1M28 7L21.0511 13';
+    const originalD_contact_btn = 'M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13';
+    const newD_contact_btn = 'M28 7L1 7M28 7L21.0511 1M28 7L21.0511 13';
 
     contact_sbmt_btn.addEventListener('mouseover', () => {
         // Change the d attribute to the new value when hovered
@@ -145,12 +145,53 @@ const newD_contact_btn = 'M28 7L1 7M28 7L21.0511 1M28 7L21.0511 13';
 // side bar
 function openSideBar() {
     const sideBar = document.getElementById('side-menu-bar');
-    sideBar.classList.add('opacity-100','h-full');
+    sideBar.classList.add('opacity-100', 'h-full');
 }
 
 function closeSideBar() {
     const sideBar = document.getElementById('side-menu-bar');
-    sideBar.classList.remove('opacity-100','h-full');
+    sideBar.classList.remove('opacity-100', 'h-full');
 }
 
 
+
+// features page
+const featuresNavbar = document.getElementById('features-hr-scroll');
+const featuresBody = document.getElementById('features');
+const allFeatures = document.querySelectorAll('.features-sec');
+const featuresNavLinks = document.querySelectorAll('#features-hr-scroll a');
+const featuresNavContainer = document.getElementById('features-hr-scroll');
+
+if (featuresNavbar) {
+    window.onscroll = function () { toggleNav() };
+
+    var sticky = featuresBody.offsetTop -20;
+
+    function toggleNav() {
+        if (window.pageYOffset >= sticky) {
+            featuresNavbar.classList.add("hr-scroll-sticky");
+            
+            allFeatures.forEach(feature => {
+                let top = window.scrollY;
+                let offset = feature.offsetTop;
+                let height = feature.offsetHeight;
+                let id = feature.getAttribute('id');
+
+                if (top >= offset-200 ) {
+                    featuresNavLinks.forEach(featureLink => {
+                        featureLink.classList.remove('hr-scroll-acitve');
+                    })
+                    featuresNavContainer.querySelector(`a[href="#${id}"]`).classList.add('hr-scroll-acitve');
+                }
+            })
+      
+        } else {
+            featuresNavbar.classList.remove("hr-scroll-sticky");
+        }
+
+
+    }
+
+
+
+}
