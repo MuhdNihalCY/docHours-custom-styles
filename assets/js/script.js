@@ -175,9 +175,7 @@ if (featuresNavbar) {
 
             allFeatures.forEach(feature => {
                 let top = window.scrollY;
-                let leftX = window.scrollY
                 let offset = feature.offsetTop;
-                // let height = feature.offsetHeight;
                 let id = feature.getAttribute('id');
 
                 if (top >= offset - 200) {
@@ -186,259 +184,92 @@ if (featuresNavbar) {
                     })
                     const specificFeature = featuresNavContainer.querySelector(`a[href="#${id}"]`);
                     specificFeature.classList.add('hr-scroll-acitve');
-
-                    const scrollPostion = specificFeature.getBoundingClientRect();
-
-                    // The rect object contains the element's position and size relative to the viewport
-                    // console.log('Top:', scrollPostion.top);  
-                    console.log("Left X : ", leftX)      // Top position of the element relative to the viewport
-                    console.log('Left:', scrollPostion.left);      // Left position of the element relative to the viewport
-                    // console.log('Bottom:', scrollPostion.bottom);  // Bottom position of the element relative to the viewport
-                    console.log('Right:', scrollPostion.right);    // Right position of the element relative to the viewport
-                    console.log('Width:', scrollPostion.width);    // Width of the element
-                    console.log('featuresNavContainer.clientWidth:', featuresNavContainer.clientWidth);  // Height of the element
-                    console.log('featuresNavContainer.offsetLeft:', featuresNavContainer.offsetLeft);  // Height of the element
-                    console.log('featuresNavContainer.offsetWidth:', featuresNavContainer.offsetWidth);  // Height of the element
-                    console.log('scrollPostion.left - featuresNavbar.clientWidth:',featuresNavbar.clientWidth - scrollPostion.left +  scrollPostion.width);  // Height of the element
-
-                    // You can use scrollPostion.left to get the left position (x-axis) of the element
-                    // const elementPositionX = scrollPostion.left;
-                    // if (scrollPostion.left > featuresNavbar.clientWidth - 540) {
-                        // featuresNavContainer.scrollTo({
-                        //     // left: ,
-                        //     behavior: 'smooth'
-                        // }); 
-                    // } 
-
-                    // if(scrollPostion.left < 0){
-                    //     featuresNavContainer.scrollTo({
-                    //         left: featuresNavContainer.offsetLeft,
-                    //         behavior: 'smooth'
-                    //     });
-                    // }
-
-                    // if (scrollPostion.left < featuresNavbar.clientWidth - 540) {
-                    //     featuresNavContainer.scrollTo({
-                    //         left: featuresNavContainer.offsetLeft,
-                    //         behavior: 'smooth'
-                    //     });
-                    // } 
-                    // if(scrollPostion.left < featuresNavbar.scrollWidth) {
-                    //     featuresNavContainer.scrollTo({
-                    //         left: featuresNavContainer.offsetLeft,
-                    //         behavior: 'smooth'
-                    //     });
-                    // }
-                    // else {
-                    //     featuresNavContainer.scrollTo({
-                    //         left: 0,
-                    //         behavior: 'smooth'
-                    //     });
-                    // }
-                    // else if (scrollPostion.left > 700) {
-                    //     featuresNavContainer.scrollTo({
-                    //         left: 700,
-                    //         behavior: 'smooth'
-                    //     });
-                    // } else if (scrollPostion.left > 400) {
-                    //     featuresNavContainer.scrollTo({
-                    //         left: 400,
-                    //         behavior: 'smooth'
-                    //     });
-                    // } else if (scrollPostion.left < 400) {
-                    //     featuresNavContainer.scrollTo({
-                    //         left: 0,
-                    //         behavior: 'smooth'
-                    //     });
-                    // }
-                    // if (scrollPostion.left < -44.1875) {
-                    //     featuresNavContainer.scrollTo({
-                    //         left: 0,
-                    //         behavior: 'smooth'
-                    //     });
-                    // }
-
-                    // console.log('The x-axis position of the element is:', elementPositionX);
-
                 }
             })
-
         } else {
             featuresNavbar.classList.remove("hr-scroll-sticky");
         }
-
-
     }
-}
-document.addEventListener('DOMContentLoaded', () => {
+
+    // Get the navigation bar element and its links
     const featuresNav = document.getElementById('featuresNav');
     const navLinks = featuresNav.querySelectorAll('a');
+    // Get all the sections and convert the NodeList to an array
     const sections = Array.from(document.querySelectorAll('.features-sec'));
-    let lastCall = 0;
-    let scrollAnimation;
-  
+    let lastCall = 0;  // Variable to track the last time the throttle function was called
+    let scrollAnimation;  // Variable to hold the reference to the animation frame
+
+    // Function to handle window scrolling
     const handleScroll = () => {
-      const scrollPosition = window.pageYOffset + window.innerHeight / 2;
-      const currentSectionIndex = sections.findIndex(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        return scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight;
-      });
-  
-      navLinks.forEach(link => link.classList.remove('hr-scroll-active'));
-  
-      if (currentSectionIndex !== -1) {
-        const activeLink = navLinks[currentSectionIndex];
-        activeLink.classList.add('hr-scroll-active');
-  
-        const navWidth = featuresNav.offsetWidth;
-        const linkWidth = activeLink.offsetWidth;
-        const targetScrollLeft = activeLink.offsetLeft - navWidth / 2 + linkWidth / 2;
-  
-        if (scrollAnimation) cancelAnimationFrame(scrollAnimation);
-        const startScrollLeft = featuresNav.scrollLeft;
-  
-        scrollAnimation = requestAnimationFrame(function animate(time) {
-          const progress = Math.min(time / 200, 1); // Adjust the duration (200ms) as needed
-          featuresNav.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
-          if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
+        // Calculate the current scroll position, adjusting for the center of the screen
+        const scrollPosition = window.pageYOffset + window.innerHeight / 2;
+        console.log("window.pageYOffset: ", window.pageYOffset);
+        console.log("scrollPosition: ", scrollPosition);
+
+        // Find the index of the section currently in view
+        const currentSectionIndex = sections.findIndex(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            console.log("sectionTop: ", sectionTop);
+            console.log("sectionHeight: ", sectionTop);
+
+            return scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight;
         });
-      }
+        console.log("currentSectionIndex: ", currentSectionIndex);
+
+
+        // If a section is in view, update the active navigation link and scroll the navigation bar
+        if (currentSectionIndex > 0) { // -1) {
+            const activeLink = navLinks[currentSectionIndex];
+            // Add 'hr-scroll-active' class to the active link
+            // activeLink.classList.add('hr-scroll-active');
+
+            // Calculate the target scroll position in the navigation bar to center the active link
+            const navWidth = featuresNav.offsetWidth;
+            const linkWidth = activeLink.offsetWidth;
+            const targetScrollLeft = activeLink.offsetLeft - navWidth / 2 + linkWidth / 2;
+
+            // Cancel any existing animation frame
+            if (scrollAnimation) cancelAnimationFrame(scrollAnimation);
+            const startScrollLeft = featuresNav.scrollLeft;
+
+            // Animate the scrolling to center the active link in the navigation bar
+            scrollAnimation = requestAnimationFrame(function animate(time) {
+                // Calculate the progress of the animation
+                const progress = Math.min(time / 200, 1);
+                // Update the scroll position of the navigation bar
+                featuresNav.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
+                // If the animation is not complete, request the next animation frame
+                if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
+            });
+        }
     };
-  
+
+    // Throttle function limits the frequency of the handleScroll function
     const throttle = (fn, delay) => (...args) => {
-      const now = Date.now();
-      if (now - lastCall >= delay) {
-        fn(...args);
-        lastCall = now;
-      }
+        const now = Date.now();
+        if (now - lastCall >= delay) {
+            fn(...args);
+            lastCall = now;
+        }
     };
-  
-    window.addEventListener('scroll', throttle(handleScroll, 100));
-  });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const featuresNav = document.getElementById('featuresNav');
-//     const navLinks = featuresNav.querySelectorAll('a');
-//     const sections = Array.from(document.querySelectorAll('.features-sec'));
-  
-//     // Function to handle scrolling
-//     function handleScroll() {
-//       const scrollPosition = window.pageYOffset + window.innerHeight / 2;
-//       const currentSectionIndex = sections.findIndex(section => {
-//         const sectionTop = section.offsetTop;
-//         const sectionHeight = section.offsetHeight;
-//         return scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight;
-//       });
-  
-//       // Remove the active class from all links
-//       navLinks.forEach(link => link.classList.remove('hr-scroll-active'));
-  
-//       // Add the active class to the corresponding link
-//       if (currentSectionIndex !== -1) {
-//         const activeLink = navLinks[currentSectionIndex];
-//         activeLink.classList.add('hr-scroll-active');
-  
-//         // Center the active link in the navigation bar
-//         const navWidth = featuresNav.offsetWidth;
-//         const linkWidth = activeLink.offsetWidth;
-//         featuresNav.scrollLeft = activeLink.offsetLeft - navWidth / 2 + linkWidth / 2;
-//       }
-//     }
-  
-//     // Throttle function to limit scroll event handling
-//     function throttle(fn, delay) {
-//       let lastCall = 0;
-//       return function (...args) {
-//         const now = Date.now();
-//         if (now - lastCall >= delay) {
-//           fn.apply(this, args);
-//           lastCall = now;
-//         }
-//       };
-//     }
-  
-//     // Use a throttled scroll event handler
-//     window.addEventListener('scroll', throttle(handleScroll, 100));
-//   });
+    // Add a throttled scroll event listener to the window
+    window.addEventListener('scroll', throttle(handleScroll, 300));
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const featuresNav = document.getElementById('featuresNav');
-//     const navLinks = featuresNav.querySelectorAll('a');
-//     const sections = document.querySelectorAll('.features-sec');
-    
-//     // Function to handle scrolling
-//     function handleScroll() {
-//         let currentSectionIndex = 0;
+    // Function to handle click events on navigation links
+    const handleLinkClick = (event) => {
+        // Prevent the default link behavior (jumping to the section)
+        event.preventDefault();
+        // Scroll smoothly to the target section
+        const targetSection = document.querySelector(event.currentTarget.hash);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-//         // Determine which section is in view
-//         sections.forEach((section, index) => {
-//             const sectionTop = section.offsetTop;
-//             const sectionHeight = section.offsetHeight;
-//             const scrollPosition = window.scrollY + window.innerHeight / 2; // Adjust the scroll position for the center
-
-//             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-//                 currentSectionIndex = index;
-//             }
-//         });
-
-//         // Get the corresponding navigation link
-//         const activeLink = navLinks[currentSectionIndex];
-
-//         // Remove the active class from all links and add it to the active link
-//         navLinks.forEach(link => link.classList.remove('hr-scroll-active'));
-//         activeLink.classList.add('hr-scroll-active');
-
-//         // Center the active link in the navigation bar
-//         // Here we use scrollLeft and make sure to use 'smooth' behavior for smoother scrolling.
-//         featuresNav.scroll({
-//             left: activeLink.offsetLeft - featuresNav.offsetWidth / 2 + activeLink.offsetWidth / 2,
-//             behavior: 'smooth'
-//         });
-//     }
-
-//     // Debounce function to avoid excessive scroll event handling
-//     function debounce(fn, delay) {
-//         let timeoutId;
-//         return function (...args) {
-//             clearTimeout(timeoutId);
-//             timeoutId = setTimeout(() => fn.apply(this, args), delay);
-//         };
-//     }
-
-//     // Use a debounced scroll event handler
-//     window.addEventListener('scroll', debounce(handleScroll, 5));
-// });
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const featuresNav = document.getElementById('featuresNav');
-//     const navLinks = featuresNav.querySelectorAll('a');
-//     const sections = document.querySelectorAll('.features-sec');
-    
-//     // Add event listener for window scroll
-//     window.addEventListener('scroll', function() {
-//         let currentSectionIndex = 0;
-        
-//         // Loop through sections to determine which one is in view
-//         sections.forEach((section, index) => {
-//             const sectionTop = section.offsetTop;
-//             const sectionHeight = section.offsetHeight;
-//             const scrollPosition = window.scrollY;
-            
-//             if (scrollPosition >= sectionTop - sectionHeight / 2) {
-//                 currentSectionIndex = index;
-//             }
-//         });
-        
-//         // Get the corresponding navigation link
-//         const activeLink = navLinks[currentSectionIndex];
-        
-//         // Set the active class on the navigation link
-//         navLinks.forEach(link => link.classList.remove('hr-scroll-active'));
-//         activeLink.classList.add('hr-scroll-active');
-        
-//         // Scroll the navigation bar so the active link is in view
-//         featuresNav.scrollLeft = activeLink.offsetLeft - featuresNav.offsetWidth / 2 + activeLink.offsetWidth / 2;
-//     });
-// });
+    // Add click event listeners to navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', handleLinkClick);
+    });
+}
