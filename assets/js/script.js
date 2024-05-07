@@ -191,16 +191,13 @@ if (featuresNavbar) {
         }
     }
 
-    // Get the navigation bar element and its links
-    const featuresNav = document.getElementById('featuresNav');
-    const navLinks = featuresNav.querySelectorAll('a');
     // Get all the sections and convert the NodeList to an array
-    const sections = Array.from(document.querySelectorAll('.features-sec'));
+    const sections = Array.from(allFeatures);
     let lastCall = 0;  // Variable to track the last time the throttle function was called
     let scrollAnimation;  // Variable to hold the reference to the animation frame
 
     // Function to handle window scrolling
-    const handleScroll = () => {
+    function handleScroll() {
         // Calculate the current scroll position, adjusting for the center of the screen
         const scrollPosition = window.pageYOffset + window.innerHeight / 2;
         console.log("window.pageYOffset: ", window.pageYOffset);
@@ -220,25 +217,25 @@ if (featuresNavbar) {
 
         // If a section is in view, update the active navigation link and scroll the navigation bar
         if (currentSectionIndex > 0) { // -1) {
-            const activeLink = navLinks[currentSectionIndex];
+            const activeLink = featuresNavLinks[currentSectionIndex];
             // Add 'hr-scroll-active' class to the active link
             // activeLink.classList.add('hr-scroll-active');
 
             // Calculate the target scroll position in the navigation bar to center the active link
-            const navWidth = featuresNav.offsetWidth;
+            const navWidth = featuresNavContainer.offsetWidth;
             const linkWidth = activeLink.offsetWidth;
             const targetScrollLeft = activeLink.offsetLeft - navWidth / 2 + linkWidth / 2;
 
             // Cancel any existing animation frame
             if (scrollAnimation) cancelAnimationFrame(scrollAnimation);
-            const startScrollLeft = featuresNav.scrollLeft;
+            const startScrollLeft = featuresNavContainer.scrollLeft;
 
             // Animate the scrolling to center the active link in the navigation bar
             scrollAnimation = requestAnimationFrame(function animate(time) {
                 // Calculate the progress of the animation
                 const progress = Math.min(time / 200, 1);
                 // Update the scroll position of the navigation bar
-                featuresNav.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
+                featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
                 // If the animation is not complete, request the next animation frame
                 if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
             });
@@ -246,12 +243,17 @@ if (featuresNavbar) {
     };
 
     // Throttle function limits the frequency of the handleScroll function
-    const throttle = (fn, delay) => (...args) => {
-        const now = Date.now();
-        if (now - lastCall >= delay) {
-            fn(...args);
-            lastCall = now;
-        }
+    function throttle(callback, delay) {
+        return () => {
+            const now = Date.now();
+
+            // Check if enough time has passed since the last call
+            if (now - lastCall >= delay) {
+                callback();
+                // Update the lastCall timestamp to the current time
+                lastCall = now;
+            }
+        };
     };
 
     // Add a throttled scroll event listener to the window
@@ -260,16 +262,62 @@ if (featuresNavbar) {
     // Function to handle click events on navigation links
     const handleLinkClick = (event) => {
         // Prevent the default link behavior (jumping to the section)
-        event.preventDefault();
+        //  event.preventDefault();
         // Scroll smoothly to the target section
         const targetSection = document.querySelector(event.currentTarget.hash);
         if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            // targetSection.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
     // Add click event listeners to navigation links
-    navLinks.forEach(link => {
+    featuresNavLinks.forEach(link => {
         link.addEventListener('click', handleLinkClick);
     });
+
+    // Get references to your navigation container and all the links
+    // const featuresNavContainer = document.querySelector('#yourNavigationContainer');
+   // const links = document.querySelectorAll('a[href^="#"]'); // Select all links with hashes
+
+    // Function to animate the scroll
+    function animateScroll(targetScrollLeft, duration) {
+        let startScrollLeft = featuresNavContainer.scrollLeft;
+        let startTime = null;
+
+        function animationFrame(time) {
+            if (!startTime) startTime = time;
+            const elapsedTime = time - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+
+            // Calculate the current scroll position
+            featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
+
+            // Continue animating if not complete
+            if (progress < 1) {
+                requestAnimationFrame(animationFrame);
+            }
+        }
+
+        requestAnimationFrame(animationFrame);
+    }
+
+    // Event listener for links
+    featuresNavLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+           // event.preventDefault(); // Prevent default behavior
+           // Get the target anchor element
+           const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+           console.log("targetId: ",targetElement);
+
+            if (targetElement) {
+                // Calculate the target scroll position
+                const targetScrollLeft = targetElement.offsetLeft;
+
+                // Animate the scrolling
+                animateScroll(targetScrollLeft, 200); // Duration in milliseconds
+            }
+        });
+    });
+
 }

@@ -230,7 +230,7 @@
     position: fixed;
     top: 0; 
     height: 4rem;
-    /* transition: 0.5s all; */
+    transition: 0.5s all;
     /* height: 4rem; */
 }
 
