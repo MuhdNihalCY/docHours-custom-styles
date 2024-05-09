@@ -175,11 +175,11 @@ if (featuresNavbar) {
     var bt_non_sticky = featuresBody.offsetHeight + featuresBody.offsetTop;
 
     function toggleNav() {
-        if (window.pageYOffset >= sticky) {
+        if (window.scrollY >= sticky) {
 
             featuresNavbar.classList.add("hr-scroll-sticky");
-            if (window.pageYOffset >= bt_non_sticky) {
-              //  console.log("Removing sticky at bt_non_sticky: ",bt_non_sticky," window.pageYOffset: ",window.pageYOffset)
+            if (window.scrollY >= bt_non_sticky) {
+               console.log("Removing sticky at bt_non_sticky: ",bt_non_sticky," window.scrollY: ",window.scrollY)
                 featuresNavbar.classList.remove("hr-scroll-sticky");
             }
 
@@ -220,8 +220,8 @@ if (featuresNavbar) {
     // Function to handle window scrolling
     function handleScroll() {
         // Calculate the current scroll position, adjusting for the center of the screen
-        const scrollPosition = window.pageYOffset + window.innerHeight / 2;
-        // console.log("window.pageYOffset: ", window.pageYOffset);
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        // console.log("window.scrollY: ", window.scrollY);
         // console.log("scrollPosition: ", scrollPosition);
 
         // Find the index of the section currently in view
@@ -373,7 +373,9 @@ if (featuresNavbar) {
             timer = setTimeout(function () {
                 // do something
                 scriptScrolling = false;
-
+                window.addEventListener('scroll', throttle(handleScroll, 1000));
+                handleScroll();
+                console.log("Attached event listener: for scroll ")
             }, 300);
         }, false);
     }
