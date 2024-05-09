@@ -166,8 +166,8 @@ console.log(featuresNavContainer.offsetLeft);
 
 if (featuresNavbar) {
 
-    window.addEventListener('scroll' , toggleNav)
-//    window.onscroll = function () { toggleNav() };
+    window.addEventListener('scroll', toggleNav)
+    //    window.onscroll = function () { toggleNav() };
 
     var sticky = featuresBody.offsetTop - 100;
     var bt_non_sticky = featuresBody.offsetHeight + featuresBody.offsetTop;
@@ -191,6 +191,7 @@ if (featuresNavbar) {
                     })
                     const specificFeature = featuresNavContainer.querySelector(`a[href="#${id}"]`);
                     specificFeature.classList.add('hr-scroll-acitve');
+                   // handleScroll()
                 }
             })
         } else {
@@ -222,7 +223,7 @@ if (featuresNavbar) {
 
             return scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight;
         });
-        // console.log("currentSectionIndex: ", currentSectionIndex);
+        console.log("currentSectionIndex: ", currentSectionIndex);
 
 
         // If a section is in view, update the active navigation link and scroll the navigation bar
@@ -236,23 +237,58 @@ if (featuresNavbar) {
             const linkWidth = activeLink.offsetWidth;
             const targetScrollLeft = activeLink.offsetLeft - navWidth / 2 + linkWidth / 2;
 
+            const acitveLinkRight = activeLink.offsetLeft + linkWidth;
+            const activeLinkLeft = activeLink.offsetLeft;
+
+
+
+            console.log("activeLink.offsetLeft ; ", activeLink.offsetLeft)
+            console.log(" navWidth ; ", navWidth)
+            console.log(" linkWidth ; ", linkWidth)
+            console.log("activeLink.offsetLeft - navWidth / 2 + linkWidth / 2; ", activeLink.offsetLeft - navWidth / 2 + linkWidth / 2)
+
             // Cancel any existing animation frame
 
             if (scrollAnimation) cancelAnimationFrame(scrollAnimation);
             const startScrollLeft = featuresNavContainer.scrollLeft;
-            console.log(" First- startScrollLeft: ", startScrollLeft);
+
 
             // Animate the scrolling to center the active link in the navigation bar
             scrollAnimation = requestAnimationFrame(function animate(time) {
                 // Calculate the progress of the animation
-                const progress = Math.min(time / 200, 1);
+            //    const progress = Math.min(time / 200, 1);
                 // Update the scroll position of the navigation bar
                 // console.log("scrollAnimation: ", scrollAnimation);
-                console.log("progress: ", progress);
-                featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
+              //  console.log("progress: ", progress);
+                console.log("targetScrollLeft: ", targetScrollLeft)
+                console.log(" First- startScrollLeft: ", startScrollLeft);
+                console.log(" targetScrollLeft - startScrollLeft : ", targetScrollLeft - startScrollLeft);
+
+                // featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
+                if (acitveLinkRight -60  > navWidth) {
+                    featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) // * progress; //featuresNavContainer.scrollLeft + linkWidth;
+                    console.log(" ++ acitveLinkRight + 50 > navWidth : ", acitveLinkRight + 50 > navWidth);
+                }
+                else if (activeLinkLeft  < (navWidth / 2) + 180) {
+                    featuresNavContainer.scrollLeft = 0;
+                    //startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
+
+                    console.log(" -- activeLinkLeft + 50 < navWidth /2 : ", activeLinkLeft + 50 < navWidth / 2);
+                    console.log(" -- activeLinkLeft + 50 : ", activeLinkLeft + 50);
+                    console.log(" --  navWidth/2 : ", navWidth / 2);
+                    console.log(" -- acitveLinkRight + 50 < navWidth : ", acitveLinkRight + 50 < navWidth);
+
+                }
+                // if (acitveLinkRight + 50 > navWidth /2   ) { // && acitveLinkRight + 50 < navWidth / 2
+                //     featuresNavContainer.scrollLeft = activeLinkLeft - 200;
+                //     console.log(" -- acitveLinkRight + 50 < navWidth : ", acitveLinkRight + 50 < navWidth);
+                // }
+
+                //  featuresNavContainer.scrollLeft = 
+
                 console.log(" second- startScrollLeft: ", featuresNavContainer.scrollLeft);
                 // If the animation is not complete, request the next animation frame
-                if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
+             //   if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
 
                 // console.log("scrollAnimation: ",animate)
                 // cancelAnimationFrame(animate);
@@ -276,32 +312,35 @@ if (featuresNavbar) {
     };
 
     // Add a throttled scroll event listener to the window
-   window.addEventListener('scroll', throttle(handleScroll, 1000));
-//    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', throttle(handleScroll, 3000));
+    //    window.addEventListener('scroll', handleScroll);
 
-    // featuresNavLinks.forEach(link => {
-    //     link.addEventListener('click', event => {
-    //         //  event.preventDefault(); // Prevent default navigation
-    //         console.log("Testing");
-    //         scrollNavBarOnClickOnNavLink(link)
-    //     });
-    // });
+
+
+    featuresNavLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            //  event.preventDefault(); // Prevent default navigation
+            console.log("Testing");
+            scrollNavBarOnClickOnNavLink(link)
+        });
+    });
 
     function scrollNavBarOnClickOnNavLink(linkElement) {
         const targetId = linkElement.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         // featuresNavLinks.scrollLeft = linkElement.offsetLeft;
 
-    //    targetElement.scrollIntoView();
+        targetElement.scrollIntoView();
         // window.scrollTo({
         //     top: targetElement.offsetTop
 
         // })
-       // scroll(0, targetElement.offsetTop);
+        scroll(0, targetElement.offsetTop);
         console.log(`targetID: ${targetId}, targetElement: ${targetElement.offsetTop}, featuresNavLinks.scrollLeft: ${featuresNavLinks.scrollLeft}`);
-        console.log("element: ",targetElement);
-       
+        console.log("element: ", targetElement);
+
     }
+
 
     // nav link making to custom behaviour
     // featuresNavLinks.forEach(link => {
@@ -335,8 +374,6 @@ if (featuresNavbar) {
     //     // }
     // }
 
-
-   
 
 
 
