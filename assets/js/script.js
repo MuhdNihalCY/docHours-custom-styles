@@ -162,6 +162,8 @@ const allFeatures = document.querySelectorAll('.features-sec');
 const featuresNavLinks = document.querySelectorAll('#features-hr-scroll a');
 const featuresNavContainer = document.getElementById('featuresNav');
 
+let scriptScrolling = false;
+
 console.log(featuresNavContainer.offsetLeft);
 
 if (featuresNavbar) {
@@ -174,8 +176,10 @@ if (featuresNavbar) {
 
     function toggleNav() {
         if (window.pageYOffset >= sticky) {
+
             featuresNavbar.classList.add("hr-scroll-sticky");
             if (window.pageYOffset >= bt_non_sticky) {
+              //  console.log("Removing sticky at bt_non_sticky: ",bt_non_sticky," window.pageYOffset: ",window.pageYOffset)
                 featuresNavbar.classList.remove("hr-scroll-sticky");
             }
 
@@ -191,9 +195,15 @@ if (featuresNavbar) {
                     })
                     const specificFeature = featuresNavContainer.querySelector(`a[href="#${id}"]`);
                     specificFeature.classList.add('hr-scroll-acitve');
-                   // handleScroll()
+
+                    // handleScroll()
+                    // window.addEventListener('scroll', throttle(handleScroll, 1000));
                 }
             })
+            if (!scriptScrolling) {
+                window.addEventListener('scroll', throttle(handleScroll, 1000));
+                console.log("Attached event listener: for scroll ")
+            }
         } else {
             featuresNavbar.classList.remove("hr-scroll-sticky");
         }
@@ -256,28 +266,30 @@ if (featuresNavbar) {
             // Animate the scrolling to center the active link in the navigation bar
             scrollAnimation = requestAnimationFrame(function animate(time) {
                 // Calculate the progress of the animation
-            //    const progress = Math.min(time / 200, 1);
+                //    const progress = Math.min(time / 200, 1);
                 // Update the scroll position of the navigation bar
                 // console.log("scrollAnimation: ", scrollAnimation);
-              //  console.log("progress: ", progress);
+                //  console.log("progress: ", progress);
                 console.log("targetScrollLeft: ", targetScrollLeft)
                 console.log(" First- startScrollLeft: ", startScrollLeft);
                 console.log(" targetScrollLeft - startScrollLeft : ", targetScrollLeft - startScrollLeft);
 
-                // featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
-                if (acitveLinkRight -60  > navWidth) {
-                    featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) // * progress; //featuresNavContainer.scrollLeft + linkWidth;
-                    console.log(" ++ acitveLinkRight + 50 > navWidth : ", acitveLinkRight + 50 > navWidth);
-                }
-                else if (activeLinkLeft  < (navWidth / 2) + 180) {
-                    featuresNavContainer.scrollLeft = 0;
-                    //startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
+                if (!scriptScrolling) {
+                    // featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
+                    if (acitveLinkRight > navWidth) {
+                        featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) // * progress; //featuresNavContainer.scrollLeft + linkWidth;
+                        console.log(" ++ acitveLinkRight + 50 > navWidth : ", acitveLinkRight + 50 > navWidth);
+                    }
+                    else if (activeLinkLeft < (navWidth / 2) + 180) {
+                        featuresNavContainer.scrollLeft = 0;
+                        //startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
 
-                    console.log(" -- activeLinkLeft + 50 < navWidth /2 : ", activeLinkLeft + 50 < navWidth / 2);
-                    console.log(" -- activeLinkLeft + 50 : ", activeLinkLeft + 50);
-                    console.log(" --  navWidth/2 : ", navWidth / 2);
-                    console.log(" -- acitveLinkRight + 50 < navWidth : ", acitveLinkRight + 50 < navWidth);
+                        console.log(" -- activeLinkLeft + 50 < navWidth /2 : ", activeLinkLeft + 50 < navWidth / 2);
+                        console.log(" -- activeLinkLeft + 50 : ", activeLinkLeft + 50);
+                        console.log(" --  navWidth/2 : ", navWidth / 2);
+                        console.log(" -- acitveLinkRight + 50 < navWidth : ", acitveLinkRight + 50 < navWidth);
 
+                    }
                 }
                 // if (acitveLinkRight + 50 > navWidth /2   ) { // && acitveLinkRight + 50 < navWidth / 2
                 //     featuresNavContainer.scrollLeft = activeLinkLeft - 200;
@@ -288,7 +300,7 @@ if (featuresNavbar) {
 
                 console.log(" second- startScrollLeft: ", featuresNavContainer.scrollLeft);
                 // If the animation is not complete, request the next animation frame
-             //   if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
+                //   if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
 
                 // console.log("scrollAnimation: ",animate)
                 // cancelAnimationFrame(animate);
@@ -312,71 +324,59 @@ if (featuresNavbar) {
     };
 
     // Add a throttled scroll event listener to the window
-    window.addEventListener('scroll', throttle(handleScroll, 3000));
+    // window.addEventListener('scroll', throttle(handleScroll, 1000));
     //    window.addEventListener('scroll', handleScroll);
 
 
 
     featuresNavLinks.forEach(link => {
         link.addEventListener('click', event => {
-            //  event.preventDefault(); // Prevent default navigation
-            console.log("Testing");
+            // event.preventDefault(); // Prevent default navigation
+            window.removeEventListener(scroll, throttle(handleScroll, 1000))
+            console.log("removed event listener: for scroll ")
+            console.log("++++Testing+++++");
             scrollNavBarOnClickOnNavLink(link)
         });
     });
 
-    function scrollNavBarOnClickOnNavLink(linkElement) {
+    async function scrollNavBarOnClickOnNavLink(linkElement) {
         const targetId = linkElement.getAttribute('href');
         const targetElement = document.querySelector(targetId);
+        window.removeEventListener(scroll, throttle(handleScroll, 1000))
+        scriptScrolling = true;
+        // linkElement.preventDefault();
         // featuresNavLinks.scrollLeft = linkElement.offsetLeft;
+        // console.log("Before Scroll: ----window.scrollY", window.scrollY)
+        console.log("Before Scroll: ----window.scrollY", window.scrollY);
+        targetElement.scrollIntoView()
+        // await targetElement.scrollIntoView({
+        //     behavior: 'smooth',  // Use smooth scrolling
+        //     block: 'start'       // Align the top of the element with the top of the viewport
+        // });
+        console.log("After Scroll: ----window.scrollY", window.scrollY);
 
-        targetElement.scrollIntoView();
         // window.scrollTo({
         //     top: targetElement.offsetTop
 
         // })
-        scroll(0, targetElement.offsetTop);
+        console.log("____trying to locate feature____");
+        //  scroll(0, targetElement.offsetTop);
         console.log(`targetID: ${targetId}, targetElement: ${targetElement.offsetTop}, featuresNavLinks.scrollLeft: ${featuresNavLinks.scrollLeft}`);
         console.log("element: ", targetElement);
 
+        // custom timing for scroll to occur
+        var timer = null;
+        window.addEventListener('scroll', function () {
+            if (timer !== null) {
+                clearTimeout(timer);
+            }
+            timer = setTimeout(function () {
+                // do something
+                scriptScrolling = false;
+
+            }, 300);
+        }, false);
     }
-
-
-    // nav link making to custom behaviour
-    // featuresNavLinks.forEach(link => {
-    //     link.addEventListener('click', scrollNavBarOnClickOnNavLink(link));
-    // });
-    // event => {
-    //   //  event.preventDefault(); // Prevent default navigation to control it manually
-
-    //     // Get the target element
-    //     const targetId = link.getAttribute('href');
-    //     const targetElement = document.querySelector(targetId);
-
-    //     featuresNavLinks.scrollLeft = link.offsetLeft;
-    //     // if (targetElement) {
-    //     //     // Calculate target scroll position for the navigation bar
-    //     //     const targetScrollLeft = targetElement.offsetLeft - (featuresNavContainer.clientWidth / 2) + (targetElement.clientWidth / 2);
-
-    //     //     // If there's an ongoing animation, cancel it
-    //     //     if (scrollAnimation) {
-    //     //         cancelAnimationFrame(scrollAnimation);
-    //     //     }
-
-    //     //     // Animate the navigation bar scroll
-    //     //     animateScroll(targetScrollLeft, 300); // Adjust duration as needed
-
-    //     //     // Use a timeout to delay the default behavior, allowing animation to finish
-    //     //     setTimeout(() => {
-    //     //         // Scroll to the target element (vertical scrolling)
-    //     //         targetElement.scrollIntoView({ behavior: 'smooth' });
-    //     //     }, 300); // Adjust the delay to match the animation duration
-    //     // }
-    // }
-
-
-
-
 
 
     // Type writing Effect on hero section
