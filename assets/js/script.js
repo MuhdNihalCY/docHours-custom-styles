@@ -165,7 +165,9 @@ const featuresNavContainer = document.getElementById('featuresNav');
 console.log(featuresNavContainer.offsetLeft);
 
 if (featuresNavbar) {
-    window.onscroll = function () { toggleNav() };
+
+    window.addEventListener('scroll' , toggleNav)
+//    window.onscroll = function () { toggleNav() };
 
     var sticky = featuresBody.offsetTop - 100;
     var bt_non_sticky = featuresBody.offsetHeight + featuresBody.offsetTop;
@@ -246,9 +248,9 @@ if (featuresNavbar) {
                 const progress = Math.min(time / 200, 1);
                 // Update the scroll position of the navigation bar
                 // console.log("scrollAnimation: ", scrollAnimation);
-                // console.log("progress: ", progress);
+                console.log("progress: ", progress);
                 featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
-                // console.log(" second- startScrollLeft: ", featuresNavContainer.scrollLeft);
+                console.log(" second- startScrollLeft: ", featuresNavContainer.scrollLeft);
                 // If the animation is not complete, request the next animation frame
                 if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
 
@@ -274,21 +276,23 @@ if (featuresNavbar) {
     };
 
     // Add a throttled scroll event listener to the window
-    window.addEventListener('scroll', throttle(handleScroll, 300));
+   window.addEventListener('scroll', throttle(handleScroll, 1000));
+//    window.addEventListener('scroll', handleScroll);
 
-    featuresNavLinks.forEach(link => {
-        link.addEventListener('click', event => {
-            //  event.preventDefault(); // Prevent default navigation
-            console.log("Testing");
-            scrollNavBarOnClickOnNavLink(link)
-        });
-    });
+    // featuresNavLinks.forEach(link => {
+    //     link.addEventListener('click', event => {
+    //         //  event.preventDefault(); // Prevent default navigation
+    //         console.log("Testing");
+    //         scrollNavBarOnClickOnNavLink(link)
+    //     });
+    // });
 
     function scrollNavBarOnClickOnNavLink(linkElement) {
         const targetId = linkElement.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        featuresNavLinks.scrollLeft = linkElement.offsetLeft;
-        targetElement.scrollIntoView();
+        // featuresNavLinks.scrollLeft = linkElement.offsetLeft;
+
+    //    targetElement.scrollIntoView();
         // window.scrollTo({
         //     top: targetElement.offsetTop
 
@@ -411,3 +415,4 @@ if (featuresNavbar) {
 
 
 }
+
