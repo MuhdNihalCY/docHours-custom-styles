@@ -160,6 +160,7 @@ const featuresNavbar = document.getElementById('features-hr-scroll');
 const featuresBody = document.getElementById('features');
 const allFeatures = document.querySelectorAll('.features-sec');
 const featuresNavLinks = document.querySelectorAll('#features-hr-scroll a');
+const featuresNavLinksHero = document.querySelectorAll('#featuresLinks a');
 const featuresNavContainer = document.getElementById('featuresNav');
 
 let scriptScrolling = false;
@@ -199,8 +200,8 @@ if (featuresNavbar) {
                     // specificFeature.classList.add('hr-scroll-acitve');
                     // console.log("Width: ",specificFeature.offsetWidth);
                     // console.log("left: ",specificFeature.offsetLeft);
-                    runningSlider.style.left = specificFeature.offsetLeft+"px";
-                    runningSlider.style.width = specificFeature.offsetWidth+'px';
+                    runningSlider.style.left = specificFeature.offsetLeft + "px";
+                    runningSlider.style.width = specificFeature.offsetWidth + 'px';
                     // console.log("runningSlider.style.left: #",runningSlider.offsetLeft);
                     // console.log("runningSlider.style.width: #",runningSlider.style.width);
                     // console.log("hr-scroll-acitve: #",id);
@@ -210,7 +211,7 @@ if (featuresNavbar) {
                     // window.addEventListener('scroll', throttle(handleScroll, 1000));
                 }
 
-                
+
 
 
 
@@ -363,9 +364,13 @@ if (featuresNavbar) {
         link.addEventListener('click', event => {
             window.removeEventListener(scroll, throttle(handleScroll, 1000))
             scrollNavBarOnClickOnNavLink(link)
-            // event.preventDefault(); // Prevent default navigation
-            // console.log("removed event listener: for scroll ")
-            // console.log("++++Testing+++++");
+        });
+    });
+
+    featuresNavLinksHero.forEach(link => {
+        link.addEventListener('click', event => {
+            window.removeEventListener(scroll, throttle(handleScroll, 1000))
+            scrollNavBarOnClickOnNavLink(link)
         });
     });
 
@@ -374,27 +379,9 @@ if (featuresNavbar) {
         const targetElement = document.querySelector(targetId);
         window.removeEventListener(scroll, throttle(handleScroll, 1000))
         scriptScrolling = true;
-        // linkElement.preventDefault();
-        // featuresNavLinks.scrollLeft = linkElement.offsetLeft;
-        // console.log("Before Scroll: ----window.scrollY", window.scrollY)
-        // console.log("Before Scroll: ----window.scrollY", window.scrollY);
+
         targetElement.scrollIntoView()
-        // await targetElement.scrollIntoView({
-        //     behavior: 'smooth',  // Use smooth scrolling
-        //     block: 'start'       // Align the top of the element with the top of the viewport
-        // });
-        // console.log("After Scroll: ----window.scrollY", window.scrollY);
 
-        // window.scrollTo({
-        //     top: targetElement.offsetTop
-
-        // })
-        // console.log("____trying to locate feature____");
-        // //  scroll(0, targetElement.offsetTop);
-        // console.log(`targetID: ${targetId}, targetElement: ${targetElement.offsetTop}, featuresNavLinks.scrollLeft: ${featuresNavLinks.scrollLeft}`);
-        // console.log("element: ", targetElement);
-
-        // custom timing for scroll to occur
         var timer = null;
         window.addEventListener('scroll', function () {
             if (timer !== null) {
@@ -423,7 +410,7 @@ if (featuresNavbar) {
     let deleting = false; // Flag to track whether we're deleting text
     const typingSpeed = 150; // Speed of typing out a sentence
     const deletingSpeed = 100; // Speed of deleting a sentence
-    const textElement = document.getElementById("text");
+    const textElement = document.getElementById("text-typewriting");
 
     function typeWriter() {
         if (deleting) {
