@@ -164,7 +164,7 @@ const featuresNavContainer = document.getElementById('featuresNav');
 
 let scriptScrolling = false;
 
-console.log(featuresNavContainer.offsetLeft);
+// console.log(featuresNavContainer.offsetLeft);
 
 if (featuresNavbar) {
 
@@ -173,13 +173,14 @@ if (featuresNavbar) {
 
     var sticky = featuresBody.offsetTop - 100;
     var bt_non_sticky = featuresBody.offsetHeight + featuresBody.offsetTop;
+    var runningSlider = document.getElementById('nav-slider');
 
     function toggleNav() {
         if (window.scrollY >= sticky) {
 
             featuresNavbar.classList.add("hr-scroll-sticky");
             if (window.scrollY >= bt_non_sticky) {
-               console.log("Removing sticky at bt_non_sticky: ",bt_non_sticky," window.scrollY: ",window.scrollY)
+                // console.log("Removing sticky at bt_non_sticky: ", bt_non_sticky, " window.scrollY: ", window.scrollY)
                 featuresNavbar.classList.remove("hr-scroll-sticky");
             }
 
@@ -189,20 +190,49 @@ if (featuresNavbar) {
                 let offset = feature.offsetTop;
                 let id = feature.getAttribute('id');
 
+                // running
                 if (top >= offset - 200) {
-                    featuresNavLinks.forEach(featureLink => {
-                        featureLink.classList.remove('hr-scroll-acitve');
-                    })
+                    // featuresNavLinks.forEach(featureLink => {
+                    //     // featureLink.classList.remove('hr-scroll-acitve');
+                    // })
                     const specificFeature = featuresNavContainer.querySelector(`a[href="#${id}"]`);
-                    specificFeature.classList.add('hr-scroll-acitve');
+                    // specificFeature.classList.add('hr-scroll-acitve');
+                    // console.log("Width: ",specificFeature.offsetWidth);
+                    // console.log("left: ",specificFeature.offsetLeft);
+                    runningSlider.style.left = specificFeature.offsetLeft+"px";
+                    runningSlider.style.width = specificFeature.offsetWidth+'px';
+                    // console.log("runningSlider.style.left: #",runningSlider.offsetLeft);
+                    // console.log("runningSlider.style.width: #",runningSlider.style.width);
+                    // console.log("hr-scroll-acitve: #",id);
+
 
                     // handleScroll()
                     // window.addEventListener('scroll', throttle(handleScroll, 1000));
                 }
+
+                
+
+
+
+                // if (top >= offset - 200) {
+                //     featuresNavLinks.forEach(featureLink => {
+                //         featureLink.classList.remove('hr-scroll-acitve');
+                //         if(featureLink.getAttribute('href') == `#${id}`){
+                //             console.log("hr-scroll-acitve: #",id);
+                //             featureLink.classList.add('hr-scroll-acitve');
+                //         }
+
+                //     })
+                //     // const specificFeature = featuresNavContainer.querySelector(`a[href="#${id}"]`);
+                //     // specificFeature.classList.add('hr-scroll-acitve');
+
+                //     // handleScroll()
+                //     // window.addEventListener('scroll', throttle(handleScroll, 1000));
+                // }
             })
             if (!scriptScrolling) {
-                window.addEventListener('scroll', throttle(handleScroll, 1000));
-                console.log("Attached event listener: for scroll ")
+                window.addEventListener('scroll', throttle(handleScroll, 200));
+                // console.log("Attached event listener: for scroll ")
             }
         } else {
             featuresNavbar.classList.remove("hr-scroll-sticky");
@@ -233,7 +263,7 @@ if (featuresNavbar) {
 
             return scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight;
         });
-        console.log("currentSectionIndex: ", currentSectionIndex);
+        // console.log("currentSectionIndex: ", currentSectionIndex);
 
 
         // If a section is in view, update the active navigation link and scroll the navigation bar
@@ -252,10 +282,10 @@ if (featuresNavbar) {
 
 
 
-            console.log("activeLink.offsetLeft ; ", activeLink.offsetLeft)
-            console.log(" navWidth ; ", navWidth)
-            console.log(" linkWidth ; ", linkWidth)
-            console.log("activeLink.offsetLeft - navWidth / 2 + linkWidth / 2; ", activeLink.offsetLeft - navWidth / 2 + linkWidth / 2)
+            // console.log("activeLink.offsetLeft ; ", activeLink.offsetLeft)
+            // console.log(" navWidth ; ", navWidth)
+            // console.log(" linkWidth ; ", linkWidth)
+            // console.log("activeLink.offsetLeft - navWidth / 2 + linkWidth / 2; ", activeLink.offsetLeft - navWidth / 2 + linkWidth / 2)
 
             // Cancel any existing animation frame
 
@@ -270,24 +300,24 @@ if (featuresNavbar) {
                 // Update the scroll position of the navigation bar
                 // console.log("scrollAnimation: ", scrollAnimation);
                 //  console.log("progress: ", progress);
-                console.log("targetScrollLeft: ", targetScrollLeft)
-                console.log(" First- startScrollLeft: ", startScrollLeft);
-                console.log(" targetScrollLeft - startScrollLeft : ", targetScrollLeft - startScrollLeft);
+                // console.log("targetScrollLeft: ", targetScrollLeft)
+                // console.log(" First- startScrollLeft: ", startScrollLeft);
+                // console.log(" targetScrollLeft - startScrollLeft : ", targetScrollLeft - startScrollLeft);
 
                 if (!scriptScrolling) {
                     // featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
                     if (acitveLinkRight > navWidth) {
                         featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) // * progress; //featuresNavContainer.scrollLeft + linkWidth;
-                        console.log(" ++ acitveLinkRight + 50 > navWidth : ", acitveLinkRight + 50 > navWidth);
+                        // console.log(" ++ acitveLinkRight + 50 > navWidth : ", acitveLinkRight + 50 > navWidth);
                     }
                     else if (activeLinkLeft < (navWidth / 2) + 180) {
                         featuresNavContainer.scrollLeft = 0;
                         //startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
 
-                        console.log(" -- activeLinkLeft + 50 < navWidth /2 : ", activeLinkLeft + 50 < navWidth / 2);
-                        console.log(" -- activeLinkLeft + 50 : ", activeLinkLeft + 50);
-                        console.log(" --  navWidth/2 : ", navWidth / 2);
-                        console.log(" -- acitveLinkRight + 50 < navWidth : ", acitveLinkRight + 50 < navWidth);
+                        // console.log(" -- activeLinkLeft + 50 < navWidth /2 : ", activeLinkLeft + 50 < navWidth / 2);
+                        // console.log(" -- activeLinkLeft + 50 : ", activeLinkLeft + 50);
+                        // console.log(" --  navWidth/2 : ", navWidth / 2);
+                        // console.log(" -- acitveLinkRight + 50 < navWidth : ", acitveLinkRight + 50 < navWidth);
 
                     }
                 }
@@ -298,7 +328,7 @@ if (featuresNavbar) {
 
                 //  featuresNavContainer.scrollLeft = 
 
-                console.log(" second- startScrollLeft: ", featuresNavContainer.scrollLeft);
+                // console.log(" second- startScrollLeft: ", featuresNavContainer.scrollLeft);
                 // If the animation is not complete, request the next animation frame
                 //   if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
 
@@ -331,11 +361,11 @@ if (featuresNavbar) {
 
     featuresNavLinks.forEach(link => {
         link.addEventListener('click', event => {
-            // event.preventDefault(); // Prevent default navigation
             window.removeEventListener(scroll, throttle(handleScroll, 1000))
-            console.log("removed event listener: for scroll ")
-            console.log("++++Testing+++++");
             scrollNavBarOnClickOnNavLink(link)
+            // event.preventDefault(); // Prevent default navigation
+            // console.log("removed event listener: for scroll ")
+            // console.log("++++Testing+++++");
         });
     });
 
@@ -347,22 +377,22 @@ if (featuresNavbar) {
         // linkElement.preventDefault();
         // featuresNavLinks.scrollLeft = linkElement.offsetLeft;
         // console.log("Before Scroll: ----window.scrollY", window.scrollY)
-        console.log("Before Scroll: ----window.scrollY", window.scrollY);
+        // console.log("Before Scroll: ----window.scrollY", window.scrollY);
         targetElement.scrollIntoView()
         // await targetElement.scrollIntoView({
         //     behavior: 'smooth',  // Use smooth scrolling
         //     block: 'start'       // Align the top of the element with the top of the viewport
         // });
-        console.log("After Scroll: ----window.scrollY", window.scrollY);
+        // console.log("After Scroll: ----window.scrollY", window.scrollY);
 
         // window.scrollTo({
         //     top: targetElement.offsetTop
 
         // })
-        console.log("____trying to locate feature____");
-        //  scroll(0, targetElement.offsetTop);
-        console.log(`targetID: ${targetId}, targetElement: ${targetElement.offsetTop}, featuresNavLinks.scrollLeft: ${featuresNavLinks.scrollLeft}`);
-        console.log("element: ", targetElement);
+        // console.log("____trying to locate feature____");
+        // //  scroll(0, targetElement.offsetTop);
+        // console.log(`targetID: ${targetId}, targetElement: ${targetElement.offsetTop}, featuresNavLinks.scrollLeft: ${featuresNavLinks.scrollLeft}`);
+        // console.log("element: ", targetElement);
 
         // custom timing for scroll to occur
         var timer = null;
@@ -382,76 +412,46 @@ if (featuresNavbar) {
 
 
     // Type writing Effect on hero section
-    // Array of sentences to display
     const sentences = [
         "smoothly",
         "quickly",
         "securely."
     ];
 
-    // Variables to track the current sentence and character index
     let sentenceIndex = 0;
     let charIndex = 0;
     let deleting = false; // Flag to track whether we're deleting text
-
-    // Typing and deleting speeds in milliseconds
     const typingSpeed = 150; // Speed of typing out a sentence
     const deletingSpeed = 100; // Speed of deleting a sentence
-
-    // Get the text element where the typewriter effect will appear
     const textElement = document.getElementById("text");
 
-    // Function to type out or delete a sentence
     function typeWriter() {
-        // If we're deleting text
         if (deleting) {
-            // If there is still text to delete
             if (textElement.textContent.length > 0) {
-                // Remove the last character from the text element
                 textElement.textContent = textElement.textContent.slice(0, -1);
-                // Continue deleting with a delay
                 setTimeout(typeWriter, deletingSpeed);
             } else {
-                // Once the current sentence is fully deleted, start typing the next sentence
                 deleting = false;
-                // Move to the next sentence
                 sentenceIndex++;
-                // Check if we've reached the end of the array
                 if (sentenceIndex >= sentences.length) {
-                    // Reset the sentence index to loop back to the first sentence
                     sentenceIndex = 0;
                 }
-                // Reset the character index for the new sentence
                 charIndex = 0;
-                // Start typing the next sentence
                 typeWriter();
             }
         } else {
-            // If we're typing text
-            // If the current sentence is not fully typed out
             if (charIndex < sentences[sentenceIndex].length) {
-                // Add the next character to the text element
                 textElement.textContent += sentences[sentenceIndex].charAt(charIndex);
-                // Increment the character index
                 charIndex++;
-                // Continue typing with a delay
                 setTimeout(typeWriter, typingSpeed);
             } else {
-                // When the sentence is fully typed out
-                // Wait for a bit before starting to delete the sentence
                 setTimeout(() => {
-                    // Set the deleting flag to true
                     deleting = true;
-                    // Start deleting the text
                     typeWriter();
-                }, 1000); // Delay before deleting the current sentence (2 seconds)
+                }, 1000);
             }
         }
     }
-
-    // Start the typewriter effect
     typeWriter();
-
-
 }
 

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *,
 *::before,
 *::after {
@@ -45,23 +49,23 @@
 
 @keyframes slide {
     0% {
-        margin-top: -105px;
+        margin-top: -110px;
     }
 
     5% {
-        margin-top: -70px;
+        margin-top: -80px;
     }
 
     33% {
-        margin-top: -70px;
+        margin-top: -80px;
     }
 
     38% {
-        margin-top: -35px;
+        margin-top: -40px;
     }
 
     66% {
-        margin-top: -35px;
+        margin-top: -40px;
     }
 
     71% {
@@ -207,47 +211,29 @@
 
 /* horizontal scroll slider  */
 .hr-scroll {
-    /* position: absolute; */
     box-shadow: 0px 4px 4px 0px #0000000D;
-    /* top: -100px; */
-    /* top: -4rem; */
     height: 0rem;
 }
 
 .hr-scroll a {
     transition: .1s all;
-    /* padding-top: 1.2rem;
-    padding-bottom: 1.2rem; */
 }
 
-.hr-scroll-acitve {
-    border-bottom: 3px solid #11144F;
-    /* padding-bottom: 1.1rem; */
-    /* border-image: linear-gradient(90deg, #121212 0%, #11144F 100%); */
+.nav-slider {
+    background-color: #11144F;
+    transition: all .3s linear;
+    height: 2px;
+    position: absolute;
+    top: 61px;
 }
 
 .hr-scroll-sticky {
     position: fixed;
-    top: 0; 
+    top: 0;
     height: 4rem;
     transition: 0.5s all;
     /* height: 4rem; */
 }
-
-.hr-scroll-top-active {
-}
-
-
-/* .hr-scroll-acitve::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 2px solid;
-    border-image: linear-gradient(90deg, #121212 0%, #11144F 100%);
-} */
 
 .hide-scrollbar {
 
@@ -263,20 +249,14 @@
     /* Firefox */
 }
 
-/* #features-hr-scroll nav a {
-    position: relative;
-    transition: 0.5s all 0;
-} */
-
-/* #features-hr-scroll nav a:nth-child(1)::before {
-    content: '';
-    position: absolute;
-    border-bottom: 2px solid black;
-    width: 100%;
-    bottom: -3px;
-} */
-
 /* style.css */
+
+
+
+/* 
+@import url('https://fonts.cdnfonts.com/css/avenir');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans'); */
+
 .typewriter {
     font-family: monospace;
     font-size: 24px;
@@ -287,7 +267,7 @@
 .cursor {
     display: inline-block;
     width: 0.5em;
-  
+
     animation: blink 0.7s steps(2, start) infinite;
 }
 
@@ -296,3 +276,40 @@
         visibility: hidden;
     }
 }
+
+.fr-hero-bg-blur {
+    /* background-image: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(103, 232, 249, 0.65) 0%, rgba(192, 132, 252, 0.65) 100%); */
+    /* background: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(103, 232, 249, 0.9) 0%, rgba(192, 132, 252, 0.9) 100%); */
+    background: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(192, 132, 252, 0.38) 9%, rgba(103, 232, 249, 0.38) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+
+
+}
+
+.login-register-btn {
+    background: linear-gradient(90deg, #4C42B8, #4C42B8);
+}
+
+
+
+.login-register-btn:hover::before {
+    opacity: 1;
+}
+
+.font-Poppins{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 
+p {
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.feature-page h3{
+    font-family: 'Avenir', sans-serif;
+}
+
+.feature-page h1{
+    font-family: 'Avenir', sans-serif;
+} */
