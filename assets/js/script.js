@@ -105,8 +105,8 @@ if (toggleBtn) {
         if (toggleBtn.value == "on") {
             toggleBtn.value = "";
             // console.log("montly");
-            counter('basic-price', 999, 1099, 800);
-            counter('growth-price', 2999, 3099, 800);
+            counter('basic-price', 999, 1099, 500);
+            counter('growth-price', 2999, 3099, 500);
             // document.getElementById('basic-price').textContent = "1099";
             // document.getElementById('growth-price').textContent = "3099";
 
@@ -116,8 +116,8 @@ if (toggleBtn) {
         } else {
             toggleBtn.value = "on";
             // console.log("annually");
-            counter('basic-price', 1099, 999, 800);
-            counter('growth-price', 3099, 2999, 800);
+            counter('basic-price', 1099, 999, 500);
+            counter('growth-price', 3099, 2999, 500);   
             // document.getElementById('basic-price').textContent = "999";
             // document.getElementById('growth-price').textContent = "2999";
 
@@ -184,14 +184,10 @@ const featuresNavLinksHero = document.querySelectorAll('#featuresLinks a');
 const featuresNavContainer = document.getElementById('featuresNav');
 
 let scriptScrolling = false;
-
 // console.log(featuresNavContainer.offsetLeft);
-
 if (featuresNavbar) {
-
     window.addEventListener('scroll', toggleNav)
-    //    window.onscroll = function () { toggleNav() };
-
+    
     var sticky = featuresBody.offsetTop - 100;
     var bt_non_sticky = featuresBody.offsetHeight + featuresBody.offsetTop;
     var runningSlider = document.getElementById('nav-slider');
@@ -213,11 +209,7 @@ if (featuresNavbar) {
 
                 // running
                 if (top >= offset - 200) {
-                    // featuresNavLinks.forEach(featureLink => {
-                    //     // featureLink.classList.remove('hr-scroll-acitve');
-                    // })
                     const specificFeature = featuresNavContainer.querySelector(`a[href="#${id}"]`);
-                    // specificFeature.classList.add('hr-scroll-acitve');
                     // console.log("Width: ",specificFeature.offsetWidth);
                     // console.log("left: ",specificFeature.offsetLeft);
                     runningSlider.style.left = specificFeature.offsetLeft + "px";
@@ -225,31 +217,7 @@ if (featuresNavbar) {
                     // console.log("runningSlider.style.left: #",runningSlider.offsetLeft);
                     // console.log("runningSlider.style.width: #",runningSlider.style.width);
                     // console.log("hr-scroll-acitve: #",id);
-
-
-                    // handleScroll()
-                    // window.addEventListener('scroll', throttle(handleScroll, 1000));
                 }
-
-
-
-
-
-                // if (top >= offset - 200) {
-                //     featuresNavLinks.forEach(featureLink => {
-                //         featureLink.classList.remove('hr-scroll-acitve');
-                //         if(featureLink.getAttribute('href') == `#${id}`){
-                //             console.log("hr-scroll-acitve: #",id);
-                //             featureLink.classList.add('hr-scroll-acitve');
-                //         }
-
-                //     })
-                //     // const specificFeature = featuresNavContainer.querySelector(`a[href="#${id}"]`);
-                //     // specificFeature.classList.add('hr-scroll-acitve');
-
-                //     // handleScroll()
-                //     // window.addEventListener('scroll', throttle(handleScroll, 1000));
-                // }
             })
             if (!scriptScrolling) {
                 window.addEventListener('scroll', throttle(handleScroll, 200));
@@ -281,19 +249,13 @@ if (featuresNavbar) {
             const sectionHeight = section.offsetHeight;
             // console.log("sectionTop: ", sectionTop);
             // console.log("sectionHeight: ", sectionTop);
-
             return scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight;
         });
         // console.log("currentSectionIndex: ", currentSectionIndex);
 
-
         // If a section is in view, update the active navigation link and scroll the navigation bar
         if (currentSectionIndex > 0) { // -1) {
             const activeLink = featuresNavLinks[currentSectionIndex];
-            // Add 'hr-scroll-active' class to the active link
-            // activeLink.classList.add('hr-scroll-active');
-
-            // Calculate the target scroll position in the navigation bar to center the active link
             const navWidth = featuresNavContainer.offsetWidth;
             const linkWidth = activeLink.offsetWidth;
             const targetScrollLeft = activeLink.offsetLeft - navWidth / 2 + linkWidth / 2;
@@ -301,30 +263,11 @@ if (featuresNavbar) {
             const acitveLinkRight = activeLink.offsetLeft + linkWidth;
             const activeLinkLeft = activeLink.offsetLeft;
 
-
-
-            // console.log("activeLink.offsetLeft ; ", activeLink.offsetLeft)
-            // console.log(" navWidth ; ", navWidth)
-            // console.log(" linkWidth ; ", linkWidth)
-            // console.log("activeLink.offsetLeft - navWidth / 2 + linkWidth / 2; ", activeLink.offsetLeft - navWidth / 2 + linkWidth / 2)
-
-            // Cancel any existing animation frame
-
             if (scrollAnimation) cancelAnimationFrame(scrollAnimation);
             const startScrollLeft = featuresNavContainer.scrollLeft;
 
-
             // Animate the scrolling to center the active link in the navigation bar
             scrollAnimation = requestAnimationFrame(function animate(time) {
-                // Calculate the progress of the animation
-                //    const progress = Math.min(time / 200, 1);
-                // Update the scroll position of the navigation bar
-                // console.log("scrollAnimation: ", scrollAnimation);
-                //  console.log("progress: ", progress);
-                // console.log("targetScrollLeft: ", targetScrollLeft)
-                // console.log(" First- startScrollLeft: ", startScrollLeft);
-                // console.log(" targetScrollLeft - startScrollLeft : ", targetScrollLeft - startScrollLeft);
-
                 if (!scriptScrolling) {
                     // featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
                     if (acitveLinkRight > navWidth) {
@@ -333,29 +276,8 @@ if (featuresNavbar) {
                     }
                     else if (activeLinkLeft < (navWidth / 2) + 180) {
                         featuresNavContainer.scrollLeft = 0;
-                        //startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
-
-                        // console.log(" -- activeLinkLeft + 50 < navWidth /2 : ", activeLinkLeft + 50 < navWidth / 2);
-                        // console.log(" -- activeLinkLeft + 50 : ", activeLinkLeft + 50);
-                        // console.log(" --  navWidth/2 : ", navWidth / 2);
-                        // console.log(" -- acitveLinkRight + 50 < navWidth : ", acitveLinkRight + 50 < navWidth);
-
                     }
                 }
-                // if (acitveLinkRight + 50 > navWidth /2   ) { // && acitveLinkRight + 50 < navWidth / 2
-                //     featuresNavContainer.scrollLeft = activeLinkLeft - 200;
-                //     console.log(" -- acitveLinkRight + 50 < navWidth : ", acitveLinkRight + 50 < navWidth);
-                // }
-
-                //  featuresNavContainer.scrollLeft = 
-
-                // console.log(" second- startScrollLeft: ", featuresNavContainer.scrollLeft);
-                // If the animation is not complete, request the next animation frame
-                //   if (progress < 1) scrollAnimation = requestAnimationFrame(animate);
-
-                // console.log("scrollAnimation: ",animate)
-                // cancelAnimationFrame(animate);
-                // console.log("scrollAnimation: ",animate)
             });
         }
     };
@@ -373,12 +295,6 @@ if (featuresNavbar) {
             }
         };
     };
-
-    // Add a throttled scroll event listener to the window
-    // window.addEventListener('scroll', throttle(handleScroll, 1000));
-    //    window.addEventListener('scroll', handleScroll);
-
-
 
     featuresNavLinks.forEach(link => {
         link.addEventListener('click', event => {
