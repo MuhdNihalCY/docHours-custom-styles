@@ -220,38 +220,37 @@ if (featuresNavbar) {
         };
     };
 
+    // remove event listener from navbar
     featuresNavLinks.forEach(link => {
         link.addEventListener('click', event => {
             window.removeEventListener(scroll, throttle(handleScroll, 1000))
             scrollNavBarOnClickOnNavLink(link)
         });
     });
+    // remove event listener from hero section navigation
     featuresNavLinksHero.forEach(link => {
         link.addEventListener('click', event => {
             window.removeEventListener(scroll, throttle(handleScroll, 1000))
             scrollNavBarOnClickOnNavLink(link)
         });
     });
-    async function scrollNavBarOnClickOnNavLink(linkElement) {
+    function scrollNavBarOnClickOnNavLink(linkElement) {
         const targetId = linkElement.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        window.removeEventListener(scroll, throttle(handleScroll, 1000))
         scriptScrolling = true;
-        targetElement.scrollIntoView()
+        targetElement.scrollIntoView() // mannually scrolling to target section.
         var timer = null;
         window.addEventListener('scroll', function() {
             if (timer !== null) {
                 clearTimeout(timer);
             }
             timer = setTimeout(function() {
-                // do something
                 scriptScrolling = false;
-                window.addEventListener('scroll', throttle(handleScroll, 1000));
                 handleScroll();
-                console.log("Attached event listener: for scroll ")
             }, 300);
         }, false);
     }
+
     // Type writing Effect on hero section
     const sentences = [
         "smoothly",
@@ -261,8 +260,8 @@ if (featuresNavbar) {
     let sentenceIndex = 0;
     let charIndex = 0;
     let deleting = false; // Flag to track whether we're deleting text
-    const typingSpeed = 150; // Speed of typing out a sentence
-    const deletingSpeed = 100; // Speed of deleting a sentence
+    const typingSpeed = 150;
+    const deletingSpeed = 100;
     const textElement = document.getElementById("text-typewriting");
 
     function typeWriter() {
