@@ -104,22 +104,15 @@ if (toggleBtn) {
 
         if (toggleBtn.value == "on") {
             toggleBtn.value = "";
-            // console.log("montly");
-            counter('basic-price', 999, 1099, 500);
-            counter('growth-price', 2999, 3099, 500);
-            // document.getElementById('basic-price').textContent = "1099";
-            // document.getElementById('growth-price').textContent = "3099";
-
+            counter('basic-price', 999, 1099, 10);
+            counter('growth-price', 2999, 3099, 200);
             montlyPayLabel.classList.add('pricing-lable-active');
             annuallyPayLabel.classList.remove('pricing-lable-active');
             offerLabel.classList.remove('pricing-save-active');
         } else {
             toggleBtn.value = "on";
-            // console.log("annually");
-            counter('basic-price', 1099, 999, 500);
-            counter('growth-price', 3099, 2999, 500);   
-            // document.getElementById('basic-price').textContent = "999";
-            // document.getElementById('growth-price').textContent = "2999";
+            counter('basic-price', 1099, 999, 10);
+            counter('growth-price', 3099, 2999, 200);   
 
             offerLabel.classList.add('pricing-save-active');
             annuallyPayLabel.classList.add('pricing-lable-active');
@@ -127,12 +120,13 @@ if (toggleBtn) {
         }
     })
 
+    // counter function for pricing page, from start price to end price give a counter transition
     function counter(id, start, end, duration) {
         let obj = document.getElementById(id),
             current = start,
             range = end - start,
             increment = end > start ? 1 : -1,
-            step = Math.abs(Math.floor(duration / range)),
+            step = 0.2, //Math.abs(Math.floor(duration / range)),
             timer = setInterval(() => {
                 current += increment;
                 obj.textContent = current;
