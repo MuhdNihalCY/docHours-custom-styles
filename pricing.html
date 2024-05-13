@@ -1,347 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DocHours</title>
     <link rel="icon" type="image/x-icon" href="/assets/img/dochours-log.svg">
-
     <!-- external styles -->
     <link rel="stylesheet" href="/assets/css/styles.css">
-
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body>
+  </head>
+  <body>
     <!-- header -->
-    <div id="side-menu-bar"
-        class="side-menu-bar mx-auto h-0 w-full pt-2.5 fixed z-50 top-0 right-0 bg-white overflow-x-hidden overflow-y-hidden opacity-0 transition-all duration-300">
-        <div class="side-menu-header w-full flex justify-between items-center px-4">
-            <a href="/" class="logo">
-                <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/dochours-log.svg" alt="" srcset="">
-            </a>
-            <a href="javascript:void(0)" onclick="closeSideBar()" class="closebtn w-6">
-                <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/close-arrow.svg" alt="close-arrow"
-                    srcset="">
-            </a>
-            <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <div id="side-menu-bar" class="side-menu-bar mx-auto h-0 w-full pt-2.5 fixed z-50 top-0 right-0 bg-white overflow-x-hidden overflow-y-hidden opacity-0 transition-all duration-300">
+      <div class="side-menu-header w-full flex justify-between items-center px-4">
+        <a href="/" class="logo">
+        <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/dochours-log.svg" alt="" srcset="">
+        </a>
+        <a href="javascript:void(0)" onclick="closeSideBar()" class="closebtn w-6">
+        <img class="side-menu-header-logo h-7 mt-1.5" src="/assets/img/close-arrow.svg" alt="close-arrow"
+          srcset="">
+        </a>
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+      </div>
+      <nav class="side-menu-links relative h-full flex flex-col gap-6 text-center justify-start">
+        <div class="side-menu-nav-Links absolute mt-16 w-full flex flex-col gap-6 text-center justify-start items-center">
+          <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]"
+            href="#">Home</a>
+          <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]"
+            href="/features.html">Features</a>
+          <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F] text-[#6AC37F]"
+            href="/pricing.html">Pricing</a>
+          <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]"
+            href="/contact.html">Contact</a>
+          <a class="login-register-btn border-l border-solid border-[#dadada] transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium hover:text-[#6AC37F] text-white font-medium rounded-3xl py-2 w-36 flex items-center justify-center"
+            href="#">Login / Register</a>
         </div>
-        <nav class="side-menu-links relative h-full flex flex-col gap-6 text-center justify-start">
-            <div class="side-menu-nav-Links absolute mt-16 w-full flex flex-col gap-6 text-center justify-start items-center">
-                <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]" href="#">Home</a>
-                <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]" href="/features.html">Features</a>
-                <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F] text-[#6AC37F]" href="/pricing.html">Pricing</a>
-                <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]" href="/contact.html">Contact</a>
-                <a class="login-register-btn border-l border-solid border-[#dadada] transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium hover:text-[#6AC37F] text-white font-medium rounded-3xl py-2 w-36 flex items-center justify-center" href="#">Login / Register</a>
-            </div>
-            <div
-                class="side-menu-blur-bg absolute blur-3xl w-[413.07px] h-[321.07px] top-24 left-[-14rem] rotate-[208.67deg]">
-            </div>
-            <div class="side-menu-footer absolute bottom-20 w-full flex flex-col items-center">
-                <div class="flex justify-between gap-12 mt-8 text-gray-400 ">
-                    <a href="#" class="cursor-pointer transition-all duration-300 text-[#ACB6C3] font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]">Terms & Conditions</a>
-                    <a href="#" class="cursor-pointer transition-all duration-300 text-[#ACB6C3] font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]">Privacy Policy</a>
-                </div> 
-                <div class="flex justify-between gap-4 mt-8">
-                    <img src="/assets/img/facebook.svg" class="social-icons  transition-all duration-300" />
-                    <img src="/assets/img/instagram.svg" class="social-icons  transition-all duration-300" />
-                    <img src="/assets/img/twitter.svg" class="social-icons  transition-all duration-300" />
-                    <img src="/assets/img/linkedin.svg" class="social-icons  transition-all duration-300" />
-                    <img src="/assets/img/youtube.svg" class="social-icons  transition-all duration-300" />
-                </div>
-            </div>
-        </nav>
+        <div
+          class="side-menu-blur-bg absolute blur-3xl w-[413.07px] h-[321.07px] top-24 left-[-14rem] rotate-[208.67deg]">
+        </div>
+        <div class="side-menu-footer absolute bottom-20 w-full flex flex-col items-center">
+          <div class="flex justify-between gap-12 mt-8 text-gray-400 ">
+            <a href="#"
+              class="cursor-pointer transition-all duration-300 text-[#ACB6C3] font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]">Terms
+            & Conditions</a>
+            <a href="#"
+              class="cursor-pointer transition-all duration-300 text-[#ACB6C3] font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]">Privacy
+            Policy</a>
+          </div>
+          <div class="flex justify-between gap-4 mt-8">
+            <img src="/assets/img/facebook.svg" class="social-icons  transition-all duration-300" />
+            <img src="/assets/img/instagram.svg" class="social-icons  transition-all duration-300" />
+            <img src="/assets/img/twitter.svg" class="social-icons  transition-all duration-300" />
+            <img src="/assets/img/linkedin.svg" class="social-icons  transition-all duration-300" />
+            <img src="/assets/img/youtube.svg" class="social-icons  transition-all duration-300" />
+          </div>
+        </div>
+      </nav>
     </div>
     <!-- container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12 lg:w-4/5 xl:3/5 2xl:max-w-screen-2xl  lg:w-full lg:px-10  xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px] -->
     <header
-        class="container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12 xl:3/5 2xl:max-w-screen-2xl   xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px]">
-        <div class="header-container w-full 2xl:w-full flex justify-between mt-4 ">
-            <div class="header-left-sec ">
-                <a href="/" class="logo">
-                    <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
-                </a>
-            </div>
-            <nav class="header-right-sec hidden flex items-center gap-9 md:flex">
-                <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]" href="#">Home</a>
-                <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]" href="/features.html">Features</a>
-                <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F] text-[#6AC37F]" href="/pricing.html">Pricing</a>
-                <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]" href="/contact.html">Contact</a>
-                <a class="login-register-btn border-l border-solid border-[#dadada] transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium hover:text-[#6AC37F] text-white font-medium rounded-3xl py-2 w-36 flex items-center justify-center " href="#">Login / Register</a>
-            </nav>
-            <img src="/assets/img/hamburger-menu.svg" onclick="openSideBar()" class="menu-icon md:hidden h-6" alt="menu"
-                srcset="">
+      class="container mx-auto flex px-4 md:px-0 sm:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12 xl:3/5 2xl:max-w-screen-2xl   xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px]">
+      <div class="header-container w-full 2xl:w-full flex justify-between mt-4 ">
+        <div class="header-left-sec ">
+          <a href="/" class="logo">
+          <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
+          </a>
         </div>
+        <nav class="header-right-sec hidden flex items-center gap-9 md:flex">
+          <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]"
+            href="#">Home</a>
+          <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]"
+            href="/features.html">Features</a>
+          <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F] text-[#6AC37F]"
+            href="/pricing.html">Pricing</a>
+          <a class=" transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium leading-5 hover:text-[#6AC37F]"
+            href="/contact.html">Contact</a>
+          <a class="login-register-btn border-l border-solid border-[#dadada] transition-all duration-300 font-['Open_Sans'] no-underline text-[#212C38] text-[15px] font-medium hover:text-[#6AC37F] text-white font-medium rounded-3xl py-2 w-36 flex items-center justify-center "
+            href="#">Login / Register</a>
+        </nav>
+        <img src="/assets/img/hamburger-menu.svg" onclick="openSideBar()" class="menu-icon md:hidden h-6" alt="menu"
+          srcset="">
+      </div>
     </header>
-
     <!-- container mx-auto pricing-body flex flex-col items-center px-2 md:px-0 md:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12  lg:w-full min-[1024px]:px-10   xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px] -->
     <div
-        class="container mx-auto flex flex-col items-center px-4 md:px-0 md:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12  xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px] relative">
-        <div class=" max-w-96  md:max-w-screen-sm mt-16 w-full flex flex-col items-center">
-            <h2 class=" text-[40px] font-medium font-Poppins leading-[54.64px] text-center">Choose the plan that works for you</h2>
-            <p class="font-['Open_Sans'] text-base font-medium text-center text-[#212C38] mt-2">Lorem Ipsum is simply dummy text of the printing industry</p>
-        </div>
-        <div class="mt-12 w-full flex flex-col items-center">
-            <div class="relative flex justify-start items-center gap-4 w-[28rem]">
-                <div class="annually-toggle-sec">
-                    <span id="pricing-save" class="pricing-save pricing-save-active w-[77px] h-[25px] rounded-3xl font-['Open_Sans'] text-xs font-medium leading-[25px] text-center ">Save 15%</span>
-                    <p id="annually-label" class="text-[#343F4C] w-[100px] pricing-lable-active">Pay Annually</p>
-                </div>
-                <label>
-                    <input type="checkbox" id="pricing-toggle-btn" class="toggle-checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-                <p id="monthly-label" class="text-[#343F4C] w-[100px] ">Pay Monthly</p>
-            </div>
-            <div
-                class="cards-container gap-5 content-center max-w-full sm:w-sm pr-cards-container mt-16 flex flex-col justify-center items-center max-[870px]:px-4 w-full min-[870px]:flex-row  gap-5 relative">
-                <div
-                    class="card border border-[#EDEDED] bg-[#fbfbfc7a] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-full max-[870px]:max-w-[500px]  lg:w-[352px] h-[484px] relative">
-                    <div class="pr-card-header flex justify-between items-center h-[100px]">
-                        <div
-                            class="badge pr-badge bg-[#FAFAFA] border border-[#ECECEC] rounded-[35px] flex items-center w-fit justify-between mb-2 text-center py-2 h-[2.3rem] px-[0.1rem]">
-                            <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
-                            <h1 class="badge-title m-0 text-[#343F4C] text-xs leading-[22px] md:leading-[23px] uppercase">FREE
-                            </h1>
-                            <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
-                        </div>
-                        <img src="/assets/img/pr-free-cone.png" class="pr-card-top-img w-[8.7rem] mt-2.5 max-[870px]:w-28 lg:w-32" alt=""
-                            srcset="">
-                    </div>
-                    <div class="price-div mt-[-15px] mt-[15px] flex items-center gap-2">
-                        <img src="/assets/img/rupee-sign.svg" class="rupee-sign h-[23px]" alt="">
-                        <p class="price font-['Open_Sans'] text-[35px] font-medium text-left text-[#000000] ">0</p>
-                    </div>
-                    <hr class="pr-card-hr h-px w-[96%]">
-                    <div class="plan-features py-6">
-                        <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
-                            <span
-                                class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
-                            <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
-                                    class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Upto
-                                    250</span> Appointment
-                                limits</p>
-                        </div>
-                        <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
-                            <span
-                                class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
-                            <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
-                                    class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Full
-                                    access</span> to all
-                                features</p>
-                        </div>
-                        <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
-                            <span
-                                class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
-                            <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
-                                    class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">No</span>
-                                SMS Credits</p>
-                        </div>
-                    </div>
-                    <div class="plan-getstart-btn-div absolute pr-3 left-[5px] bottom-24 w-full h-12 flex justify-center">
-                        <a class="try-free-btn free-plan-btn w-[153px] h-[50px] ml-1 text-base flex gap-[5px] font-light py-[0.7rem] pr-2 pl-[1.6rem] mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2"
-                            href="#">
-                            Get Start
-                            <svg id="arrow-pr-free" width="30" height="14" viewBox="0 0 22 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path id="arrow-path-pr-free" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13"
-                                    stroke="#6AC37F" stroke-width="1.5" stroke-linecap="round"
-                                    class="transition-all duration-500" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="card border border-[#EDEDED] bg-[#fbfbfc7a] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-full max-[870px]max-:w-[500px]  lg:w-[352px] h-[484px] max-h-[484px] relative">
-                    <div class="pr-card-header flex justify-between items-center h-[100px]">
-                        <div
-                            class="badge pr-badge bg-[#FAFAFA] border border-[#ECECEC] rounded-[35px] flex items-center w-fit justify-between mb-2 text-center py-2 h-[2.3rem] px-[0.1rem]">
-                            <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
-                            <h1 class="badge-title m-0 text-[#343F4C] text-xs leading-[22px] md:leading-[23px] uppercase">BASIC
-                            </h1>
-                            <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
-                        </div>
-                        <img src="/assets/img/pr-basic-round.svg"
-                            class="pr-card-top-img pr-basic-round-img mt-2.5 mb-3 w-[7.7rem] max-[870px]:w-28 lg:w-32" alt="" srcset="">
-                    </div>
-                    <div class="price-div mt-[-15px] mt-[15px] flex items-center gap-2">
-                        <img src="/assets/img/rupee-sign.svg" class="rupee-sign h-[23px]" alt="">
-                        <p id="basic-price" class="price font-['Open_Sans'] text-[35px] font-medium text-left text-[#000000] ">999</p>
-                    </div>
-                    <hr class="pr-card-hr h-px w-[96%]">
-                    <div class="plan-features py-6">
-                        <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
-                            <span class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
-                            <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Upto 1000</span> Appointment limits</p>
-                        </div>
-                        <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
-                            <span class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
-                            <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Full access</span> to all features</p>
-                        </div>
-                        <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
-                            <span class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
-                            <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">3000</span>SMS Credits</p>
-                        </div>
-                    </div>
-                    <div class="plan-getstart-btn-div absolute pr-3 left-[5px] bottom-24 w-full h-12 flex justify-center">
-                        <a class="try-free-btn basic-plan-btn w-[153px] h-[50px] ml-1 text-base flex gap-[5px] font-light py-[0.7rem] pr-2 pl-[1.6rem] mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2"
-                            href="#">
-                            Get Start
-                            <svg id="arrow-pr-basic" width="30" height="14" viewBox="0 0 22 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path id="arrow-path-pr-basic" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13"
-                                    stroke="#6AC37F" stroke-width="1.5" stroke-linecap="round"
-                                    class="transition-all duration-500" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="card border border-[#EDEDED] bg-[#fbfbfc7a] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-full max-[870px]:max-w-[500px] lg:w-[352px] h-[484px] relative">
-                    <div class="pr-card-header flex justify-between items-center h-[100px]">
-                        <div
-                            class="badge pr-badge bg-[#FAFAFA] border border-[#ECECEC] rounded-[35px] flex items-center w-fit justify-between mb-2 text-center py-2 h-[2.3rem] px-[0.1rem]">
-                            <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
-                            <h1 class="badge-title m-0 text-[#343F4C] text-xs leading-[22px] md:leading-[23px] uppercase">GROWTH
-                            </h1>
-                            <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
-                        </div>
-                        <img src="/assets/img/pr-growth-hex.svg"
-                            class="pr-card-top-img pr-basic-round-img mt-2.5 mb-3 w-[6.7rem] max-[870px]:w-28 lg:w-32" alt="" srcset="">
-                    </div>
-                    <div class="price-div mt-[-15px] mt-[15px] flex items-center gap-2">
-                        <img src="/assets/img/rupee-sign.svg" class="rupee-sign h-[23px]" alt="">
-                        <p id="growth-price" class="price font-['Open_Sans'] text-[35px] font-medium text-left text-[#000000] ">2999</p>
-                    </div>
-                    <hr class="pr-card-hr h-px w-[96%]">
-                    <div class="plan-features py-6">
-                        <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
-                            <span
-                                class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
-                            <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
-                                    class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Upto
-                                    2500</span> Appointment
-                                limits</p>
-                        </div>
-                        <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
-                            <span
-                                class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
-                            <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
-                                    class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Full
-                                    access</span> to all
-                                features</p>
-                        </div>
-                        <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
-                            <span
-                                class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
-                            <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
-                                    class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">7500</span>
-                                SMS Credits</p>
-                        </div>
-                    </div>
-                    <div class="plan-getstart-btn-div absolute pr-3 left-[5px] bottom-24 w-full h-12 flex justify-center">
-                        <a class="try-free-btn growth-plan-btn w-[153px] h-[50px] ml-1 text-base flex gap-[5px] font-light py-[0.7rem] pr-2 pl-[1.6rem]  mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2"
-                            href="#">
-                            Get Start
-                            <svg id="arrow-pr-growth" width="30" height="14" viewBox="0 0 22 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path id="arrow-path-pr-growth" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13"
-                                    stroke="#6AC37F" stroke-width="1.5" stroke-linecap="round"
-                                    class="transition-all duration-500" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div
-                    class="onboarding-child pr-blur-round-bg absolute w-40 h-32 top-[400px] left-[150px] sm:left-[250px]  min-[870px]:top-[130px] min-[870px]:left-[200px] -z-10 blur-[90px] ">
-                </div>
-            </div>
-            <p class="text-xs font-light text-[#7E7E7E] mt-8"><span class="text-red-800">*</span> Excluding GST</p>
-            <!-- <div class="card-gst-d"></div> -->
-        </div>
-
-    </div>
-    <!-- stramlining -->
-    <div class="streamlining-section flex flex-col items-center justify-center w-full mt-16 w-full px-4 pt-[5.2rem] bg-cover bg-no-repeat">
-        <div class="container mx-auto pricing-body flex flex-col items-center">
-            <div
-                class="badge pr-badge bg-[#FAFAFA] border border-[#ECECEC] rounded-[35px] flex items-center w-fit justify-between mb-2 text-center py-2 h-[2.3rem] px-[0.1rem]">
-                <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
-                <h1 class="badge-title m-0 text-[#343F4C] text-xs leading-[22px] md:leading-[23px] uppercase">LOREM IPSUM</h1>
-                <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
-            </div>
-            <!-- font-semibold -->
-            <h1 class="stremlining-title text-3xl font-semibold text-center mt-2">Lorem Ipsum is simply dummy text </h1>
-            <div id="vertical-text-slider" class="vertical-text-slider h-9 overflow-y-hidden mt-[0.6rem]">
-                <h2 class="vt-slider-1 text-3xl font-semibold font-Poppins text-center text-[#4C42B8] ">Faster Bookings</h2>
-                <h2 class="vt-slider-2 text-3xl font-semibold font-Poppins text-center text-[#6AC37F] ">Quicker Care</h2>
-                <h2 class="vt-slider-3 text-3xl font-semibold font-Poppins text-center text-[#F25821] ">Deeper Insights</h2>
-            </div>
-            <p class=" text-base mt-4 w-10/12 md:w-4/6 lg:w-3/6 font-extralight text-center">Lorem Ipsum is simply dummy
-                text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-            <a class="try-free-btn try-free-btn-stremlinig mt-6 font-thin mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2"
-                href="#">
-                Try it for free
-                <svg id="arrow-stremlining" width="30" height="14" viewBox="0 0 22 14" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path id="arrow-path-stremlining" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13" stroke="#6AC37F"
-                        class="transition-all duration-500" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </a>
-            <img src="/assets/img/rocket.gif" alt="Rocket" />
-        </div>
-    </div>
-
-
-    <!-- Footer Section -->
-    <div class="footer-section flex flex-col items-center justify-center px-6 py-12 relative ">
-        <h1 class="text-3xl font-medium text-center  max-w-[486px] w-5/6  leading-10">Subscribe to our newsletter to get
-            the latest updates</h1>
-        <!-- <h1 class="text-3xl font-bold text-center mt-1">simply dummy text</h1> -->
-        <div class="flex rounded-full border mt-12 relative">
-            <input placeholder="Your email" type="email"
-                class="px-5 py-3 bg-gray-100 placeholder:italic text-sm font-light rounded-full w-80 md:w-96 " />
-            <button class="submit-btn absolute top-0 right-0 bg-[#4C42B8] text-white rounded-full">Subscribe</button>
+      class="container mx-auto flex flex-col items-center px-4 md:px-0 md:justify-normal md:justify-center md:max-w-[1100px] md:w-11/12  xl:w-[1100px] 2xl:w-[1100px] max-w-[1100px] relative">
+      <div class=" max-w-96  md:max-w-screen-sm mt-16 w-full flex flex-col items-center">
+        <h2 class=" text-[40px] font-medium font-Poppins leading-[54.64px] text-center">Choose the plan that works for you</h2>
+        <p class="font-['Open_Sans'] text-base font-medium text-center text-[#212C38] mt-2">Lorem Ipsum is simply dummy text of the printing industry</p>
+      </div>
+      <div class="mt-12 w-full flex flex-col items-center">
+        <div class="relative flex justify-start items-center gap-4 w-[28rem]">
+          <div class="annually-toggle-sec">
+            <span id="pricing-save"
+              class="pricing-save pricing-save-active w-[77px] h-[25px] rounded-3xl font-['Open_Sans'] text-xs font-medium leading-[25px] text-center ">Save 15%</span>
+            <p id="annually-label" class="text-[#343F4C] w-[100px] pricing-lable-active">Pay Annually</p>
+          </div>
+          <label>
+            <input type="checkbox" id="pricing-toggle-btn" class="toggle-checkbox">
+            <div class="toggle-switch"></div>
+          </label>
+          <p id="monthly-label" class="text-[#343F4C] w-[100px] ">Pay Monthly</p>
         </div>
         <div
-            class="flex items-center justify-center gap-4 mt-12 opacity-15 hover:opacity-100 transition ease-in-out delay-50">
-            <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
+          class="cards-container gap-5 content-center max-w-full sm:w-sm pr-cards-container mt-16 flex flex-col justify-center items-center max-[870px]:px-4 w-full min-[870px]:flex-row  gap-5 relative">
+          <div
+            class="card border border-[#EDEDED] bg-[#fbfbfc7a] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-full max-[870px]:max-w-[500px]  lg:w-[352px] h-[484px] relative">
+            <div class="pr-card-header flex justify-between items-center h-[100px]">
+              <div
+                class="badge pr-badge bg-[#FAFAFA] border border-[#ECECEC] rounded-[35px] flex items-center w-fit justify-between mb-2 text-center py-2 h-[2.3rem] px-[0.1rem]">
+                <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
+                <h1
+                  class="badge-title m-0 text-[#343F4C] text-xs leading-[22px] md:leading-[23px] uppercase">FREE</h1>
+                <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
+              </div>
+              <img src="/assets/img/pr-free-cone.png"
+                class="pr-card-top-img w-[8.7rem] mt-2.5 max-[870px]:w-28 lg:w-32" alt="" srcset="">
+            </div>
+            <div class="price-div mt-[-15px] mt-[15px] flex items-center gap-2">
+              <img src="/assets/img/rupee-sign.svg" class="rupee-sign h-[23px]" alt="">
+              <p class="price font-['Open_Sans'] text-[35px] font-medium text-left text-[#000000] ">0</p>
+            </div>
+            <hr class="pr-card-hr h-px w-[96%]">
+            <div class="plan-features py-6">
+              <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
+                <span
+                  class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
+                <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
+                  class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Upto 250</span> Appointment limits</p>
+              </div>
+              <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
+                <span
+                  class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
+                <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
+                  class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Full access</span> to all features
+                </p>
+              </div>
+              <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
+                <span
+                  class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
+                <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
+                  class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">No</span>SMS Credits</p>
+              </div>
+            </div>
+            <div
+              class="plan-getstart-btn-div absolute pr-3 left-[5px] bottom-24 w-full h-12 flex justify-center">
+              <a class="try-free-btn free-plan-btn w-[153px] h-[50px] ml-1 text-base flex gap-[5px] font-light py-[0.7rem] pr-2 pl-[1.6rem] mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2"
+                href="#">Get Start
+                <svg id="arrow-pr-free" width="30" height="14" viewBox="0 0 22 14" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path id="arrow-path-pr-free" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13"
+                    stroke="#6AC37F" stroke-width="1.5" stroke-linecap="round"
+                    class="transition-all duration-500" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- card border border-[#EDEDED] bg-[#fbfbfc7a] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-full max-[870px]max-:w-[500px]  lg:w-[352px] h-[484px] max-h-[484px] relative -->
+          <div
+            class="card border border-[#EDEDED] bg-[#fbfbfc7a] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-full max-[870px]:max-w-[500px]  lg:w-[352px] h-[484px] relative">
+            <div class="pr-card-header flex justify-between items-center h-[100px]">
+              <div
+                class="badge pr-badge bg-[#FAFAFA] border border-[#ECECEC] rounded-[35px] flex items-center w-fit justify-between mb-2 text-center py-2 h-[2.3rem] px-[0.1rem]">
+                <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
+                <h1
+                  class="badge-title m-0 text-[#343F4C] text-xs leading-[22px] md:leading-[23px] uppercase">BASIC</h1>
+                <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
+              </div>
+              <img src="/assets/img/pr-basic-round.svg"
+                class="pr-card-top-img pr-basic-round-img mt-2.5 mb-3 w-[7.7rem] max-[870px]:w-28 lg:w-32"
+                alt="" srcset="">
+            </div>
+            <div class="price-div mt-[-15px] mt-[15px] flex items-center gap-2">
+              <img src="/assets/img/rupee-sign.svg" class="rupee-sign h-[23px]" alt="">
+              <p id="basic-price"
+                class="price font-['Open_Sans'] text-[35px] font-medium text-left text-[#000000] ">999</p>
+            </div>
+            <hr class="pr-card-hr h-px w-[96%]">
+            <div class="plan-features py-6">
+              <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
+                <span
+                  class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
+                <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
+                  class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Upto 1000</span> Appointment limits</p>
+              </div>
+              <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
+                <span
+                  class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
+                <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
+                  class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Full access</span> to all features</p>
+              </div>
+              <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
+                <span
+                  class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
+                <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
+                  class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">3000</span>SMS Credits
+                </p>
+              </div>
+            </div>
+            <div
+              class="plan-getstart-btn-div absolute pr-3 left-[5px] bottom-24 w-full h-12 flex justify-center">
+              <a class="try-free-btn basic-plan-btn w-[153px] h-[50px] ml-1 text-base flex gap-[5px] font-light py-[0.7rem] pr-2 pl-[1.6rem] mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2"
+                href="#">Get Start
+                <svg id="arrow-pr-basic" width="30" height="14" viewBox="0 0 22 14" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path id="arrow-path-pr-basic" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13"
+                    stroke="#6AC37F" stroke-width="1.5" stroke-linecap="round"
+                    class="transition-all duration-500" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div
+            class="card border border-[#EDEDED] bg-[#fbfbfc7a] rounded-3xl transition-all duration-300 pt-2.5 pr-4 pb-8 pl-7 w-full max-[870px]:max-w-[500px] lg:w-[352px] h-[484px] relative">
+            <div class="pr-card-header flex justify-between items-center h-[100px]">
+              <div
+                class="badge pr-badge bg-[#FAFAFA] border border-[#ECECEC] rounded-[35px] flex items-center w-fit justify-between mb-2 text-center py-2 h-[2.3rem] px-[0.1rem]">
+                <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
+                <h1
+                  class="badge-title m-0 text-[#343F4C] text-xs leading-[22px] md:leading-[23px] uppercase">GROWTH</h1>
+                <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
+              </div>
+              <img src="/assets/img/pr-growth-hex.svg"
+                class="pr-card-top-img pr-basic-round-img mt-2.5 mb-3 w-[6.7rem] max-[870px]:w-28 lg:w-32"
+                alt="" srcset="">
+            </div>
+            <div class="price-div mt-[-15px] mt-[15px] flex items-center gap-2">
+              <img src="/assets/img/rupee-sign.svg" class="rupee-sign h-[23px]" alt="">
+              <p id="growth-price"
+                class="price font-['Open_Sans'] text-[35px] font-medium text-left text-[#000000] ">2999</p>
+            </div>
+            <hr class="pr-card-hr h-px w-[96%]">
+            <div class="plan-features py-6">
+              <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
+                <span
+                  class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
+                <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
+                  class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Upto
+                  2500</span> Appointment
+                  limits
+                </p>
+              </div>
+              <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
+                <span
+                  class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
+                <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
+                  class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">Full
+                  access</span> to all
+                  features
+                </p>
+              </div>
+              <div class="plan-feature flex gap-[0.7rem] justify-start items-start mb-2">
+                <span
+                  class="plan-feature-bullet rounded-full w-2.5 h-2.5 bg-[#6AC37F] inline-block mt-2.5"></span>
+                <p class="plan-feature-text mb-0 text-[#212C38] font-light text-[15px]"><span
+                  class="plan-feature-bold text-[15px] font-bold leading-[29px] text-left">7500</span>
+                  SMS Credits
+                </p>
+              </div>
+            </div>
+            <div
+              class="plan-getstart-btn-div absolute pr-3 left-[5px] bottom-24 w-full h-12 flex justify-center">
+              <a class="try-free-btn growth-plan-btn w-[153px] h-[50px] ml-1 text-base flex gap-[5px] font-light py-[0.7rem] pr-2 pl-[1.6rem]  mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2"
+                href="#">
+                Get Start
+                <svg id="arrow-pr-growth" width="30" height="14" viewBox="0 0 22 14" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path id="arrow-path-pr-growth" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13"
+                    stroke="#6AC37F" stroke-width="1.5" stroke-linecap="round"
+                    class="transition-all duration-500" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div
+            class="onboarding-child pr-blur-round-bg absolute w-40 h-32 top-[400px] left-[150px] sm:left-[250px]  min-[870px]:top-[130px] min-[870px]:left-[200px] -z-10 blur-[90px] ">
+          </div>
         </div>
-        <div class="footer-headers mt-6 w-1/2 md:w-3/4 max-w-[800px] justify-between md:flex  md:flex-row md:gap-6 footer-links">
-
-            <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Features</a>
-            <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Pricing</a>
-            <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Resources</a>
-            <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Support</a>
-            <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Blog</a>
-            <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Contact Us</a>
-        </div>
-        <div class="flex justify-between gap-12 mt-8 text-gray-400">
-            <a href="#" class="cursor-pointer hover:text-[#6AC37F]">Terms & Conditions</a>
-            <a href="#" class="cursor-pointer hover:text-[#6AC37F]">Privacy Policy</a>
-        </div>
-        <div class="flex justify-between gap-4 mt-8">
-            <img src="/assets/img/facebook.svg" class="social-icons" />
-            <img src="/assets/img/instagram.svg" class="social-icons" />
-            <img src="/assets/img/twitter.svg" class="social-icons" />
-            <img src="/assets/img/linkedin.svg" class="social-icons" />
-            <img src="/assets/img/youtube.svg" class="social-icons" />
-        </div>
-        <hr class="w-8/12 mt-8 hr" />
-        <div class="flex justify-between gap-12 mt-6 text-gray-400">
-            <span class="font-thin text-sm">© 2024</span>
-            <a href="/index.html" class="flex items-center gap-1 cursor-pointer">
-                <img src="/assets/img/footerLogo.svg" />
-                <span class="font-thin hover:text-blue-800 ">docHours</span>
-
-            </a>
-        </div>
+        <p class="text-xs font-light text-[#7E7E7E] mt-8"><span class="text-red-800">*</span> Excluding GST</p>
+        <!-- <div class="card-gst-d"></div> -->
+      </div>
     </div>
-
+    <!-- stramlining -->
+    <div
+      class="streamlining-section flex flex-col items-center justify-center w-full mt-16 w-full px-4 pt-[5.2rem] bg-cover bg-no-repeat">
+      <div class="container mx-auto pricing-body flex flex-col items-center">
+        <div
+          class="badge pr-badge bg-[#FAFAFA] border border-[#ECECEC] rounded-[35px] flex items-center w-fit justify-between mb-2 text-center py-2 h-[2.3rem] px-[0.1rem]">
+          <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
+          <h1 class="badge-title m-0 text-[#343F4C] text-xs leading-[22px] md:leading-[23px] uppercase">LOREM
+            IPSUM
+          </h1>
+          <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
+        </div>
+        <!-- font-semibold -->
+        <h1 class="stremlining-title text-3xl font-semibold text-center mt-2">Lorem Ipsum is simply dummy text </h1>
+        <div id="vertical-text-slider" class="vertical-text-slider h-9 overflow-y-hidden mt-[0.6rem]">
+          <h2 class="vt-slider-1 text-3xl font-semibold font-Poppins text-center text-[#4C42B8] ">Faster Bookings
+          </h2>
+          <h2 class="vt-slider-2 text-3xl font-semibold font-Poppins text-center text-[#6AC37F] ">Quicker Care
+          </h2>
+          <h2 class="vt-slider-3 text-3xl font-semibold font-Poppins text-center text-[#F25821] ">Deeper Insights
+          </h2>
+        </div>
+        <p class=" text-base mt-4 w-10/12 md:w-4/6 lg:w-3/6 font-extralight text-center">Lorem Ipsum is simply dummy
+          text of the printing and
+          typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+        </p>
+        <a class="try-free-btn try-free-btn-stremlinig mt-6 font-thin mt-6 font-thin relative z-10 flex items-center justify-start rounded-3xl pt-3 pr-2 pb-3 pl-6 no-underline text-white text-base font-['Open_Sans'] font-semibold mt-2"
+          href="#">
+          Try it for free
+          <svg id="arrow-stremlining" width="30" height="14" viewBox="0 0 22 14" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path id="arrow-path-stremlining" d="M21 7L1 7M21 7L15.0511 1M21 7L15.0511 13" stroke="#6AC37F"
+              class="transition-all duration-500" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <img src="/assets/img/rocket.gif" alt="Rocket" />
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer-section flex flex-col items-center justify-center px-6 py-12 relative ">
+      <h1 class="text-3xl font-medium text-center  max-w-[486px] w-5/6  leading-10">Subscribe to our newsletter to get
+        the latest updates
+      </h1>
+      <!-- <h1 class="text-3xl font-bold text-center mt-1">simply dummy text</h1> -->
+      <div class="flex rounded-full border mt-12 relative">
+        <input placeholder="Your email" type="email"
+          class="px-5 py-3 bg-gray-100 placeholder:italic text-sm font-light rounded-full w-80 md:w-96 " />
+        <button class="submit-btn absolute top-0 right-0 bg-[#4C42B8] text-white rounded-full">Subscribe</button>
+      </div>
+      <div
+        class="flex items-center justify-center gap-4 mt-12 opacity-15 hover:opacity-100 transition ease-in-out delay-50">
+        <img class="header-logo w-36" src="/assets/img/dochours-logo.svg" alt="" srcset="">
+      </div>
+      <div
+        class="footer-headers mt-6 w-1/2 md:w-3/4 max-w-[800px] justify-between md:flex  md:flex-row md:gap-6 footer-links">
+        <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Features</a>
+        <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Pricing</a>
+        <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Resources</a>
+        <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Support</a>
+        <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Blog</a>
+        <a href="#" class="cursor-pointer hover:text-[#6AC37F] text-nowrap">Contact Us</a>
+      </div>
+      <div class="flex justify-between gap-12 mt-8 text-gray-400">
+        <a href="#" class="cursor-pointer hover:text-[#6AC37F]">Terms & Conditions</a>
+        <a href="#" class="cursor-pointer hover:text-[#6AC37F]">Privacy Policy</a>
+      </div>
+      <div class="flex justify-between gap-4 mt-8">
+        <img src="/assets/img/facebook.svg" class="social-icons" />
+        <img src="/assets/img/instagram.svg" class="social-icons" />
+        <img src="/assets/img/twitter.svg" class="social-icons" />
+        <img src="/assets/img/linkedin.svg" class="social-icons" />
+        <img src="/assets/img/youtube.svg" class="social-icons" />
+      </div>
+      <hr class="w-8/12 mt-8 hr" />
+      <div class="flex justify-between gap-12 mt-6 text-gray-400">
+        <span class="font-thin text-sm">© 2024</span>
+        <a href="/index.html" class="flex items-center gap-1 cursor-pointer">
+        <img src="/assets/img/footerLogo.svg" />
+        <span class="font-thin hover:text-blue-800 ">docHours</span>
+        </a>
+      </div>
+    </div>
     <script src="/assets/js/script.js"></script>
     <script type="module" src="/assets/js/tailwind.config.js"></script>
-</body>
-
+  </body>
 </html>
