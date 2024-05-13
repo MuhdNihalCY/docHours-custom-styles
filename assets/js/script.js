@@ -79,6 +79,7 @@ if (tryFreeBtnStremlinig) {
         arrowPathStremlining.setAttribute('d', originalD);
     });
 }
+
 const toggleBtn = document.getElementById('pricing-toggle-btn');
 if (toggleBtn) {
     toggleBtn.addEventListener('change', () => {
@@ -165,49 +166,39 @@ if (featuresNavbar) {
                 }
             })
             if (!scriptScrolling) {
-                window.addEventListener('scroll', throttle(handleScroll, 200)); // re attach scroll event 
+                window.addEventListener('scroll', throttle(handleScroll, 200)); // re-attach scroll event 
             }
         } else {
             featuresNavbar.classList.remove("hr-scroll-sticky");
         }
     }
+
     // Get all the sections and convert the NodeList to an array
     const sections = Array.from(allFeatures);
     let lastCall = 0; // Variable to track the last time the throttle function was called
     let scrollAnimation; // Variable to hold the reference to the animation frame
     // Function to handle window scrolling
     function handleScroll() {
-        // Calculate the current scroll position, adjusting for the center of the screen
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
-        // console.log("window.scrollY: ", window.scrollY);
-        // console.log("scrollPosition: ", scrollPosition);
-        // Find the index of the section currently in view
-        const currentSectionIndex = sections.findIndex(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            // console.log("sectionTop: ", sectionTop);
-            // console.log("sectionHeight: ", sectionTop);
-            return scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight;
+        const scrollPosition = window.scrollY + window.innerHeight / 2;   // Calculate the current scroll position, adjusting for the center of the screen
+        const currentSectionIndex = sections.findIndex(section => {  // Find the index of the section currently in view
+            return scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight;
         });
-        // console.log("currentSectionIndex: ", currentSectionIndex);
+
         // If a section is in view, update the active navigation link and scroll the navigation bar
-        if (currentSectionIndex > 0) { // -1) {
+        if (currentSectionIndex > 0) { 
             const activeLink = featuresNavLinks[currentSectionIndex];
             const navWidth = featuresNavContainer.offsetWidth;
             const linkWidth = activeLink.offsetWidth;
             const targetScrollLeft = activeLink.offsetLeft - navWidth / 2 + linkWidth / 2;
             const acitveLinkRight = activeLink.offsetLeft + linkWidth;
             const activeLinkLeft = activeLink.offsetLeft;
+
             if (scrollAnimation) cancelAnimationFrame(scrollAnimation);
             const startScrollLeft = featuresNavContainer.scrollLeft;
-            // Animate the scrolling to center the active link in the navigation bar
             scrollAnimation = requestAnimationFrame(function animate(time) {
                 if (!scriptScrolling) {
-                    // featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * progress;
                     if (acitveLinkRight > navWidth) {
-                        featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft -
-                            startScrollLeft) // * progress; //featuresNavContainer.scrollLeft + linkWidth;
-                        // console.log(" ++ acitveLinkRight + 50 > navWidth : ", acitveLinkRight + 50 > navWidth);
+                        featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) 
                     } else if (activeLinkLeft < (navWidth / 2) + 180) {
                         featuresNavContainer.scrollLeft = 0;
                     }
@@ -215,6 +206,7 @@ if (featuresNavbar) {
             });
         }
     };
+
     // Throttle function limits the frequency of the handleScroll function
     function throttle(callback, delay) {
         return () => {
@@ -227,6 +219,7 @@ if (featuresNavbar) {
             }
         };
     };
+
     featuresNavLinks.forEach(link => {
         link.addEventListener('click', event => {
             window.removeEventListener(scroll, throttle(handleScroll, 1000))
