@@ -185,7 +185,7 @@ if (featuresNavbar) {
         });
 
         // If a section is in view, update the active navigation link and scroll the navigation bar
-        if (currentSectionIndex > 0) { 
+        if (currentSectionIndex > 0) {
             const activeLink = featuresNavLinks[currentSectionIndex];
             const navWidth = featuresNavContainer.offsetWidth;
             const linkWidth = activeLink.offsetWidth;
@@ -193,17 +193,17 @@ if (featuresNavbar) {
             const acitveLinkRight = activeLink.offsetLeft + linkWidth;
             const activeLinkLeft = activeLink.offsetLeft;
 
-            if (scrollAnimation) cancelAnimationFrame(scrollAnimation);
+            // if (scrollAnimation) cancelAnimationFrame(scrollAnimation);
             const startScrollLeft = featuresNavContainer.scrollLeft;
-            scrollAnimation = requestAnimationFrame(function animate(time) {
-                if (!scriptScrolling) {
-                    if (acitveLinkRight > navWidth) {
-                        featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) 
-                    } else if (activeLinkLeft < (navWidth / 2) + 180) {
-                        featuresNavContainer.scrollLeft = 0;
-                    }
+            // scrollAnimation = requestAnimationFrame(function animate(time) {
+            if (!scriptScrolling) {
+                if (acitveLinkRight > navWidth) {
+                    featuresNavContainer.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft)
+                } else if (activeLinkLeft < (navWidth / 2) + 180) {
+                    featuresNavContainer.scrollLeft = 0;
                 }
-            });
+            }
+            // });
         }
     };
 
@@ -240,11 +240,11 @@ if (featuresNavbar) {
         scriptScrolling = true;
         targetElement.scrollIntoView() // mannually scrolling to target section.
         var timer = null;
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             if (timer !== null) {
                 clearTimeout(timer);
             }
-            timer = setTimeout(function() {
+            timer = setTimeout(function () {
                 scriptScrolling = false;
                 handleScroll();
             }, 300);
@@ -293,3 +293,13 @@ if (featuresNavbar) {
     }
     typeWriter();
 }
+
+// function featureBrandingImgMouseIn() {
+//     var featureBrandingImgDiv = document.getElementById('featureBrandingImgDiv');
+//     featureBrandingImgDiv.classList.add('feature-branding-move-left');
+// }
+
+// function featureBrandingImgMouseLeave() {
+//     var featureBrandingImgDiv = document.getElementById('featureBrandingImgDiv');
+//     featureBrandingImgDiv.classList.remove('feature-branding-move-left');
+// }
