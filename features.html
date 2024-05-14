@@ -80,11 +80,18 @@
             <span class="badge-circle bg-[#6AC37F] w-2 h-2 rounded-full mx-4"></span>
           </div>
           <div class="w-full lg:w-9/12 xl:w-[80%]">
-            <h1 class="text-2xl font-medium mt-3 text-[43px] font-medium leading-[58px] font-Poppins ">
+            <h1 class="text-2xl font-medium mt-3 text-[43px] font-medium leading-[58px] font-Poppins hidden sm:block ">
               We offer a wide range of features to ensure your clinic runs
               <span class="text-[#224D91] text-nowrap" id="text-typewriting"></span>
               <span class="cursor">|</span>
             </h1>
+             <div class="text-2xl font-medium mt-3 text-[43px] font-medium leading-[58px] font-Poppins flex flex-col sm:hidden">
+              We offer a wide range of features to ensure your clinic runs
+              <div>
+                <span class="text-[#224D91] text-nowrap" id="text-typewriting-second"></span>
+                <span class="cursor">|</span>
+              </div>
+             </div>
             <p class="mt-2 font-light text-xl font-Poppins text-[#343F4C]">intuitive time tracking software with powerful insight that help your team thrive.</p>
           </div>
           <div id="featuresLinks" class="w-full hidden md:flex justify-start gap-2 py-4 mt-2 flex-wrap">
@@ -375,8 +382,8 @@
         <div class=" fr-hero-bg-blur absolute w-40 h-32 top-[390px] left-[-90px] sm:left-[-90px] min-[870px]:left-[-90px] z-[-10] blur-[110px]"></div>
       </section>
       <section id="branding" class="features-sec w-full pt-10 pb-10 flex flex-col-reverse lg:flex-row gap-8 lg:gap-20 justify-between md:items-center relative">
-        <div class=" freature-branding-img-main ">
-          <div id="featureBrandingImgDiv" class=" flex flex-row gap-2 w-full feature-branding-sub-div">
+        <div class=" freature-branding-img-main w-11/12 sm:w-[513px] h-[280px] mx-auto overflow-hidden bg-no-repeat bg-cover px-4">
+          <div id="featureBrandingImgDiv" class=" flex flex-row gap-1 w-full feature-branding-sub-div mt-8 ml-[-1rem] w-full transition-all duration-1000 translate-x-0 hover:translate-x-[-630px] sm:hover:translate-x-[-490px]">
             <img src="/assets/img/feature-branding-invoice-1.png" class="w-[326px] h-[387px] " alt="" />
             <img src="/assets/img/feature-branding-invoice-2.png" class="w-[326px] h-[387px] " alt="" />
             <img src="/assets/img/feature-branding-invoice-3.png" class="w-[326px] h-[387px] " alt="" />

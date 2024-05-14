@@ -263,11 +263,14 @@ if (featuresNavbar) {
     const typingSpeed = 150;
     const deletingSpeed = 100;
     const textElement = document.getElementById("text-typewriting");
+    const textElement_second = document.getElementById("text-typewriting-second");
+
 
     function typeWriter() {
         if (deleting) {
             if (textElement.textContent.length > 0) {
                 textElement.textContent = textElement.textContent.slice(0, -1);
+                textElement_second.textContent = textElement_second.textContent.slice(0, -1);
                 setTimeout(typeWriter, deletingSpeed);
             } else {
                 deleting = false;
@@ -281,6 +284,7 @@ if (featuresNavbar) {
         } else {
             if (charIndex < sentences[sentenceIndex].length) {
                 textElement.textContent += sentences[sentenceIndex].charAt(charIndex);
+                textElement_second.textContent += sentences[sentenceIndex].charAt(charIndex);
                 charIndex++;
                 setTimeout(typeWriter, typingSpeed);
             } else {

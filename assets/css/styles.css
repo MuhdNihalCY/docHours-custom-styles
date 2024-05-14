@@ -6,6 +6,7 @@
 *::before,
 *::after {
     scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 .open-sans {
@@ -234,15 +235,7 @@
     /* Firefox */
 }
 
-/* style.css */
-
-
-
-/* 
-@import url('https://fonts.cdnfonts.com/css/avenir');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans'); */
-
-.typewriter {
+.typewriter {   
     font-family: monospace;
     font-size: 24px;
     white-space: nowrap;
@@ -263,13 +256,7 @@
 }
 
 .fr-hero-bg-blur {
-    /* background-image: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(103, 232, 249, 0.65) 0%, rgba(192, 132, 252, 0.65) 100%); */
-    /* background: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(103, 232, 249, 0.9) 0%, rgba(192, 132, 252, 0.9) 100%); */
-    background: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(192, 132, 252, 0.38) 9%, rgba(103, 232, 249, 0.38) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
-
-
+    background: radial-gradient(81.39% 84.82% at -6.17% 12.35%, rgba(192, 132, 252, 0.38) 9%, rgba(103, 232, 249, 0.38) 100%);
 }
 
 .login-register-btn {
@@ -283,38 +270,5 @@
 }
 
 .freature-branding-img-main {
-    width: 513px;
-    height: 280px;
     background-image: url(/assets/img/feature-branding-bk-img.svg);
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* margin-bottom: 10px; */
-    padding: 0 1rem;
 }
-
-.feature-branding-sub-div{
-    position: inherit;
-    margin-top: 2rem;
-    margin-left: -1rem;
-    width:100%;
-    transition: all 1s;
-    transform: translate(0px, 0px);
-}
-.freature-branding-img-main:hover  .feature-branding-sub-div{
-    transform: translate(-480px, 0px);
-}
-
-
-
-/* 
-    font-family: 'Open Sans', sans-serif; 
-}
-
-.feature-page h3{
-    font-family: 'Avenir', sans-serif;
-}
-
-.feature-page h1{
-    font-family: 'Avenir', sans-serif;
-} */
