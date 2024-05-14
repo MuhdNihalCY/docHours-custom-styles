@@ -263,8 +263,6 @@
     background: linear-gradient(90deg, #4C42B8, #4C42B8);
 }
 
-
-
 .login-register-btn:hover::before {
     opacity: 1;
 }
@@ -272,3 +270,30 @@
 .freature-branding-img-main {
     background-image: url(/assets/img/feature-branding-bk-img.svg);
 }
+
+
+
+/* play button home page */
+/* play btn new svg manipulation */
+
+#play-btn-home {
+    fill: url(#play-btn-color);
+    transition: fill 0.5s, transform 0.5s; 
+  }
+
+  #play-btn-home:hover {
+    fill: url(#play-btn-color-hover);
+    transform: scale(1.04);
+  }
+
+  path {
+    transition: fill 0.5s ease;
+  }
+
+  #play-btn-home path {
+    fill: url(#play-btn-color);
+  }
+
+  #play-btn-home:hover path {
+    fill: url(#play-btn-color-hover);
+  }
