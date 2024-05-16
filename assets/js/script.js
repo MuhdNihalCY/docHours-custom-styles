@@ -267,7 +267,7 @@ if (featuresNavbar) {
 
 
     function typeWriter() {
-        // alert("");
+        // alert(""); 
         if (deleting) {
             if (textElement.textContent.length > 0) {
                 textElement.textContent = textElement.textContent.slice(0, -1);
